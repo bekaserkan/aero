@@ -20,7 +20,7 @@ const Search = () => {
 
     return (
         <div className='search'>
-            <Slider {...settings}>
+            <Slider {...settings} className='slider_slick' >
                 <div className="slider">
                     <img src={slide1} alt="" />
                 </div>

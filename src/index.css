@@ -97,6 +97,8 @@
 }
 
 :root {
+    --gray: rgb(222, 222, 222, 0.3);
+    --gblue: ;
     --blue: #2b3990;
     --black: #081f2c;
     --white: #fdfdfd;
