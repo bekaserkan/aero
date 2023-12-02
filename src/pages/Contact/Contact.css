@@ -1,0 +1,92 @@
+.contact {
+    width: 100%;
+}
+
+.contact .contact_block {
+    margin-top: 100px;
+    width: 100%;
+    min-height: 0;
+
+}
+
+.contact .contact_head {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact .contact_head .btn {
+    padding: 18px 45px;
+    background: var(--blue);
+    font-size: 16px;
+    color: var(--white);
+    transition: .2s ease;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+
+.contact .contact_head .btn.active {
+    font-weight: 400;
+    color: var(--blue);
+    background: var(--white);
+}
+
+.contact .contact_body {
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+}
+
+.contact .h1 {
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.contact .contact_box {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.contact .contact_box .h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.contact .contact_box p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--black);
+}
+
+.contact .contact_box a {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--gblue);
+    text-decoration: none;
+}
+
+.contact .contact_box .icon {
+    font-size: 30px;
+    color: var(--gblue);
+}
+
+.contact .contact_box .box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact .map {
+    width: 100%;
+    height: 400px;
+}
+
+.contact .map_google {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+}

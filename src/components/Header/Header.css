@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    height: 100px;
+    height: 80px;
 }
 
 .fixet {
@@ -18,6 +18,7 @@
     width: 100%;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
     background: #fff;
+    z-index: 99999;
 }
 
 .header_fixet img {
@@ -26,7 +27,7 @@
 
 .header_fixet .head {
     width: 100%;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -49,6 +50,12 @@
     border-bottom: 2px solid #fff;
 }
 
+.header_fixet .page.active {
+    background: var(--gray);
+    border-top: 2px solid var(--gray);
+    border-bottom: 2px solid var(--gray);
+}
+
 .header_fixet .page:hover {
     background: var(--gray);
     border-top: 2px solid var(--gray);
@@ -58,7 +65,7 @@
 .header_fixet .menu {
     border-top: 2px solid var(--blue);
     position: absolute;
-    top: 110px;
+    top: 90px;
     left: 0;
     width: 100%;
     min-height: 50px;
@@ -76,7 +83,7 @@
     }
 
     100% {
-        top: 110px;
+        top: 90px;
     }
 }
 
@@ -119,6 +126,20 @@
 .header_fixet .pages_head {
     height: 100%;
     position: relative;
+}
+
+.header_fixet .pagereg {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header_fixet .register {
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--white);
+    background: var(--blue);
 }
 
 .header_fixet .pages {

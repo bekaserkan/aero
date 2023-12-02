@@ -95,7 +95,7 @@ const Header = () => {
                                 </NavLink>
                             </div>
                             <div className="menu_two">
-                                <div className='page_menu_div'>Управление бронированием</div>
+                                <div className='page_menu_div'>Информация о бронировании</div>
                                 <NavLink to="" className="page_menu">
                                     <IoIosAirplane size={30} color='var(--blue)' /> Как забронировать билет?
                                 </NavLink>
@@ -124,10 +124,13 @@ const Header = () => {
                             </div>}
                         </div>
                         <div className="pages_head">
-                            <NavLink to="" className="page">Контакты</NavLink>
+                            <NavLink to="/contact" className="page">Контакты</NavLink>
                         </div>
                         <div className="pages_head">
-                            <NavLink to="" className="page">Войти</NavLink>
+                            <NavLink to="/login" className="page">Войти</NavLink>
+                        </div>
+                        <div className="pages_head">
+                            <NavLink to="/register" className="pagereg"> <div className="register">Регистрация</div> </NavLink>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,22 @@
+.activation {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.activation p {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.activation .re_send {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gblue);
+    text-align: center;
+    cursor: pointer;
+}

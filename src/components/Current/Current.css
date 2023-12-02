@@ -1,0 +1,24 @@
+.current {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.current .contant {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.current .contant .contant_link {
+    width: 100%;
+    height: 300px;
+}
+
+.current .contant .contant_link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}

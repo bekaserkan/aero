@@ -1,0 +1,68 @@
+.directions {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.directions .contant {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.directions .contant h1 {
+    font-size: 23px;
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.directions .contant .contant_div {
+    width: 100%;
+    min-height: 300px;
+    cursor: pointer;
+}
+
+.directions .contant .contant_div p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--blue);
+}
+
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+}
+
+.zoom-img-container {
+    position: relative;
+    border-radius: 15px;
+}
+
+.zoom-img-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0);
+    transition: 0.3s ease-in-out;
+}
+
+.zoom-container:hover .zoom-img-container::before {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.zoom-container img {
+    transition: transform 0.3s ease-in-out;
+    object-fit: cover;
+    object-position: center;
+}
+
+.zoom-container:hover img {
+    transform: scale(1.2);
+}
