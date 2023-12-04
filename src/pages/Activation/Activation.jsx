@@ -3,14 +3,17 @@ import "./Activation.css";
 import Header from "../../components/Header/Header";
 import { url } from "../../Api";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/UI/Loading/Loading";
 
 const Activation = () => {
+  const { verify } = useParams()
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+
+  console.log(verify);
 
   useEffect(() => {
     const savedEmail = localStorage.getItem("email");
@@ -27,14 +30,17 @@ const Activation = () => {
     if (code.length == 6) {
       setLoading(true);
       try {
-        const response = await axios.post(url + "/auth/verify-email/", {
+        const activation = verify === "verify" ? "/auth/forgot-password-verify/" : "/auth/verify-email/"
+        const response = await axios.post(url + activation, {
           code,
           email: email,
         });
         if (response.data.response === true) {
-          localStorage.setItem("email", response.data.email);
+          localStorage.setItem("email", email);
           localStorage.setItem("token ", response.data.token);
-          alert(response.data.message, "success");
+          if (verify !== "verify") {
+            alert(response.data.message, "success");
+          }
           navigate("/dashboard");
         } else {
           alert(response.data.message, "error");

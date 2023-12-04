@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import logo from "../../img/logo_h.png"
 import { IoIosAirplane } from "react-icons/io";
 
-const Header = () => {
+const Header = ({ local }) => {
     const [booking, setBooking] = useState(false)
     const [info, setInfo] = useState(false)
     const [about, setAbout] = useState(false)
@@ -126,12 +126,20 @@ const Header = () => {
                         <div className="pages_head">
                             <NavLink to="/contact" className="page">Контакты</NavLink>
                         </div>
-                        <div className="pages_head">
-                            <NavLink to="/login" className="page">Войти</NavLink>
-                        </div>
-                        <div className="pages_head">
-                            <NavLink to="/register" className="pagereg"> <div className="register">Регистрация</div> </NavLink>
-                        </div>
+                        {local ?
+                            <div className="pages_head">
+                                <NavLink to="/dashboard" className="pagereg"> <div className="register">Личный кабинет</div></NavLink>
+                            </div>
+                            :
+                            <>
+                                <div className="pages_head">
+                                    <NavLink to="/login" className="page">Войти</NavLink>
+                                </div>
+                                <div className="pages_head">
+                                    <NavLink to="/register" className="pagereg"> <div className="register">Регистрация</div> </NavLink>
+                                </div>
+                            </>
+                        }
                     </div>
                 </div>
             </div>

@@ -38,6 +38,8 @@ const Register = () => {
         if (response.data.response === true) {
           localStorage.setItem("email", inputData.email);
           navigate("/activation");
+          alert(response.data.message)
+          console.log(inputData.email);
         } else {
           if (response.data.message) {
             alert(response.data.message, "error");
@@ -54,6 +56,8 @@ const Register = () => {
       alert("Пароли не совпадают", "error");
     }
   };
+
+  console.log(inputData.email);
 
   return (
     <div className='register'>
@@ -144,6 +148,9 @@ const Register = () => {
                   </span>
                   {error.confirm_password && (
                     <p className="red">{error.confirm_password}</p>
+                  )}
+                  {error.non_field_errors && (
+                    <p className="red">{error.non_field_errors}</p>
                   )}
                 </div>
                 <div className="input_box hh">

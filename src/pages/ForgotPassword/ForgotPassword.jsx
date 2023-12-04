@@ -19,8 +19,9 @@ const ForgotPassword = () => {
         email,
       });
       if (response.data.response === true) {
+        localStorage.setItem("email", email)
         alert(response.data.message, "success");
-        navigate("/login");
+        navigate("/activation/verify");
       } else {
         if (response.data.message) {
           alert(response.data.message, "error");

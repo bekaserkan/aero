@@ -10,10 +10,18 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import Activation from './pages/Activation/Activation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [local, setLocal] = useState()
   const location = useLocation();
+
+  console.log(local);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    setLocal(token)
+  }, [location])
 
   useEffect(() => {
     handleScroll();
@@ -25,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header local={local} />
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='contact' element={<Contact />} />
@@ -33,6 +41,7 @@ function App() {
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route path='activation' element={<Activation />} />
+        <Route path='activation/:verify' element={<Activation />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='dashboard' element={<div></div>} />
         <Route path='*' element={<NotFoundPage />} />
