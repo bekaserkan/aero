@@ -56,18 +56,18 @@ const Login = () => {
                     <div className="login_form_body">
                         <form onSubmit={handleSubmit}>
                             <div className="input_box">
-                                <label className="label_form">E-mail</label>
+                                {/* <label className="label_form">E-mail</label> */}
                                 <input
                                     className="input_form"
                                     value={email}
                                     type="text"
                                     onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="E-mail"
+                                    placeholder="Электронная почта"
                                 />
                                 {errorLogin.email && <p className="red">{errorLogin.email}</p>}
                             </div>
                             <div className="input_box d">
-                                <label className="label_form">Пароль</label>
+                                {/* <label className="label_form">Пароль</label> */}
                                 <input
                                     className="input_form"
                                     value={password}
@@ -82,10 +82,12 @@ const Login = () => {
                                     <p className="red">{errorLogin.password}</p>
                                 )}
                             </div>
-                            <NavLink className="forgot" to="/forgot-password">
-                                Забыли пароль?
-                            </NavLink>
-                            <button style={{margin: "20px 0"}} onSubmit={handleSubmit} className="button_form">
+                            <div className="forgot_password_link">
+                                <NavLink className="forgot" to="/forgot-password">
+                                    Забыли пароль?
+                                </NavLink>
+                            </div>
+                            <button style={{ margin: "20px 0" }} onSubmit={handleSubmit} className="button_form">
                                 {loading ? <Loading /> : "Войти"}
                             </button>
                             <p className="p_content">

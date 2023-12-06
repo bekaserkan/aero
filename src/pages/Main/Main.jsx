@@ -1,20 +1,19 @@
 import React from 'react'
+import "./Main.css"
 import Search from '../../components/Search/Search'
 import Current from '../../components/Current/Current'
 import Directions from '../../components/Directions/Directions'
-import NewsCompany from '../../components/NewsCompany/NewsCompany'
-import MainSliderNews from '../../components/MainSliderNews/MainSliderNews'
 import IconsComponi from '../../components/IconsComponi/IconsComponi'
+import NewsCompony from '../../components/NewsCompony/NewsCompony'
 
 const Main = () => {
     return (
         <div className='main'>
             <Search />
-            <Current />
             <Directions />
-            <NewsCompany />
-            <MainSliderNews />
+            <Current />
             <IconsComponi />
+            <NewsCompony />
         </div>
     )
 }

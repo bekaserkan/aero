@@ -11,6 +11,7 @@ import Register from './pages/Register/Register';
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import Activation from './pages/Activation/Activation';
 import { useEffect, useState } from 'react';
+import InfoPage from './pages/InfoPage/InfoPage';
 
 function App() {
   const [local, setLocal] = useState()
@@ -43,6 +44,7 @@ function App() {
         <Route path='activation' element={<Activation />} />
         <Route path='activation/:verify' element={<Activation />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
+        <Route path='info-page/:info' element={<InfoPage />} />
         <Route path='dashboard' element={<div></div>} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>

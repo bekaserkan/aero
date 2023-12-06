@@ -1,32 +1,28 @@
 import React from 'react'
 import "./Directions.css"
-import surgut from "../../img/surgut.jpeg"
-import moskva from "../../img/moskva.jpeg"
-import deli from "../../img/deli.jpeg"
+import arrow from "../../img/arrow_direct.svg"
+import { NavLink } from 'react-router-dom'
 
 const Directions = () => {
     return (
         <div className='directions'>
             <div className="container">
-                <div className="contant">
-                    <h1>Наши направления</h1>
-                    <div class="zoom-container">
-                        <div class="zoom-img-container">
-                            <img src={deli} alt="" />
-                        </div>
-                        <p>Купить билет</p>
+                <div className="current_head">
+                    <h2>Популярные направления</h2>
+                    <NavLink to="" className="direct" >Все направления <img src={arrow} alt="" /></NavLink>
+                </div>
+                <div className="directions_contant">
+                    <div className='directions_box'>
+                        <div className="city">Москва</div>
                     </div>
-                    <div class="zoom-container">
-                        <div class="zoom-img-container">
-                            <img src={moskva} alt="" />
-                        </div>
-                        <p>Купить билет</p>
+                    <div className='directions_box'>
+                        <div className="city">Ош</div>
                     </div>
-                    <div class="zoom-container">
-                        <div class="zoom-img-container">
-                            <img src={surgut} alt="" />
-                        </div>
-                        <p>Купить билет</p>
+                    <div className='directions_box'>
+                        <div className="city">Сургут</div>
+                    </div>
+                    <div className='directions_box'>
+                        <div className="city">Стамбул</div>
                     </div>
                 </div>
             </div>

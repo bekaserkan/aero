@@ -4,21 +4,56 @@
 }
 
 .current .contant {
-    width: 100%;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
+    gap: 20px;
 }
 
-.current .contant .contant_link {
+.current .contant_block {
     width: 100%;
-    height: 300px;
+    height: 420px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
 }
 
-.current .contant .contant_link img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 15px;
+.current .contant_box {
+    border-radius: 30px;
+    padding: 24px;
+    background: var(--grayW);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.current .contant .title {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.current .contant p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray);
+}
+
+.current .contant_block.f {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.current .contant_block.f .title,
+.current .contant_block.f p {
+    color: var(--white);
+}
+
+.current .flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }

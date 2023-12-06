@@ -7,19 +7,17 @@
     padding: 15px;
 }
 
-.icons_componi .slide_image {
+.icons_componi .slide_image img {
     width: 100%;
     height: 100px;
-    object-fit: cover;
-    object-position: center;
 }
 
-.slick-prev:before  {
+.slick-prev:before {
     font-size: 24px;
-    color: blue;
+    color: var(--gray);
 }
 
 .slick-next:before {
     font-size: 24px;
-    color: blue;
+    color: var(--gray);
 }

@@ -65,14 +65,14 @@ const Register = () => {
         <div className="login_form">
           <div className="login_form_head">
             <span className='h1'>
-              Войти в аккаунт
+              Регистрация
             </span>
           </div>
           <div className="login_form_body">
             <form onSubmit={handleSubmit} className="register_from">
               <div className="register_grid">
                 <div className="input_box">
-                  <label className="label_form">Имя</label>
+                  {/* <label className="label_form">Имя</label> */}
                   <input
                     className="input_form"
                     type="text"
@@ -87,7 +87,7 @@ const Register = () => {
                   {error.first_name && <p className="red">{error.first_name}</p>}
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Фамилия</label>
+                  {/* <label className="label_form">Фамилия</label> */}
                   <input
                     className="input_form"
                     type="text"
@@ -102,7 +102,7 @@ const Register = () => {
                   {error.last_name && <p className="red">{error.last_name}</p>}
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Номер телефона</label>
+                  {/* <label className="label_form">Номер телефона</label> */}
                   <input
                     className="input_form"
                     type="number"
@@ -117,7 +117,7 @@ const Register = () => {
                   {error.phone && <p className="red">{error.phone}</p>}
                 </div>
                 <div className="input_box">
-                  <label className="label_form">E-mail</label>
+                  {/* <label className="label_form">E-mail</label> */}
                   <input
                     className="input_form"
                     onChange={(e) =>
@@ -131,7 +131,7 @@ const Register = () => {
                   {error.email && <p className="red">{error.email}</p>}
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Пароль</label>
+                  {/* <label className="label_form">Пароль</label> */}
                   <input
                     className="input_form"
                     onChange={(e) =>
@@ -154,7 +154,7 @@ const Register = () => {
                   )}
                 </div>
                 <div className="input_box hh">
-                  <label className="label_form"> Повторить пороль </label>
+                  {/* <label className="label_form"> Повторить пороль </label> */}
                   <input
                     className="input_form"
                     onChange={(e) =>
@@ -171,7 +171,7 @@ const Register = () => {
                   </span>
                 </div>
               </div>
-              <p className="p_content">
+              {/* <p className="p_content">
                 Нажимая на кнопку «Регистрация», Вы принимаете условия{" "}
                 <a
                   className="a_content"
@@ -180,7 +180,7 @@ const Register = () => {
                 >
                   Публичной оферты
                 </a>{" "}
-              </p>
+              </p> */}
               <div className="all-submit">
                 <button style={{ margin: "20px 0" }} disabled={loading} className="button_form" onSubmit={handleSubmit}>
                   {loading ? <Loading color={"#fff"} /> : "Регистрация"}

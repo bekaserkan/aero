@@ -4,19 +4,19 @@
 }
 
 .activation p {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     text-align: center;
-    color: var(--black);
+    color: var(--gray);
     margin-bottom: 20px;
 }
 
 .activation .re_send {
-    margin-top: 8px;
+    margin-top: 20px;
     margin-bottom: 0;
     font-size: 14px;
-    font-weight: 500;
-    color: var(--gblue);
+    font-weight: 400;
+    color: var(--blue);
     text-align: center;
     cursor: pointer;
 }

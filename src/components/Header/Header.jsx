@@ -33,113 +33,135 @@ const Header = ({ local }) => {
                             <div onClick={close} className="fixet"></div>
                         }
                         <div className="pages_head">
-                            <NavLink to="/">
-                                <img src={logo} alt="" />
+                            <NavLink to="/" className="logo" >
+                                Airtickets
                             </NavLink>
                         </div>
-                        <div className='pages_head'>
-                            <div onClick={() => setBooking(!booking) || setInfo(false) || setAbout(false)} className="page">Бронирование и управление </div>
-                        </div>
-                        {booking && <div className="menu">
-                            <div className="menu_one">
-                                <div className='page_menu_div'>Планирование</div>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Чартерные перевозки
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Расписание рейсов
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Наши направления
-                                </NavLink>
+                        <div className="head_relative">
+                            <div className='pages_head'>
+                                <div
+                                    onMouseEnter={() => setBooking(true) || setInfo(false) || setAbout(false)}
+                                    className="page open1">Бронирование и управление </div>
                             </div>
-                            <div className="menu_two">
-                                <div className='page_menu_div'>Управление бронированием</div>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Онлаин регистрация
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Купить багаж
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Управление бронированием
-                                </NavLink>
-                            </div>
-                        </div>}
-                        <div className='pages_head'>
-                            <div onClick={() => setInfo(!info) || setBooking(false) || setAbout(false)} className="page">Информация</div>
-                        </div>
-                        {info && <div className="menu">
-                            <div className="menu_one">
-                                <div className='page_menu_div'>Информация о поездке</div>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Багаж
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Нормы бесплатного провоза багажа
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Ручная кладь
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Путешествие с детьми и младенцами
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' />Перевозка несопровождаемых детей
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Перевозка беременных женщин
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' />   Перевозка питомцев
-                                </NavLink>
-                            </div>
-                            <div className="menu_two">
-                                <div className='page_menu_div'>Информация о бронировании</div>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Как забронировать билет?
-                                </NavLink>
-                                <NavLink to="" className="page_menu">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Изменение бронирования
-                                </NavLink>
-                                <NavLink to="" className="page_menu f">
-                                    <IoIosAirplane size={30} color='var(--blue)' /> Возврат и отмена
-                                </NavLink>
-                            </div>
-                        </div>}
-                        <div className="pages">
-                            <div onClick={() => setAbout(!about) || setInfo(false) || setBooking(false)} className="page">О компании</div>
-                            {about && <div className="menu d">
-                                <div>
+                            {booking && <div
+                                onMouseEnter={() => setBooking(true) || setInfo(false) || setAbout(false)}
+                                onMouseLeave={() => setBooking(false) || setInfo(false) || setAbout(false)}
+                                className="menu close1">
+                                <div className="menu_one">
+                                    <div className='page_menu_div'>Планирование</div>
                                     <NavLink to="" className="page_menu">
-                                        <IoIosAirplane size={30} color='var(--blue)' /> О компании
+                                        Чартерные перевозки
                                     </NavLink>
                                     <NavLink to="" className="page_menu">
-                                        <IoIosAirplane size={30} color='var(--blue)' /> Галерея
+                                        Расписание рейсов
                                     </NavLink>
                                     <NavLink to="" className="page_menu">
-                                        <IoIosAirplane size={30} color='var(--blue)' /> Бортовой журнал
+                                        Наши направления
+                                    </NavLink>
+                                </div>
+                                <div className="menu_two">
+                                    <div className='page_menu_div'>Управление бронированием</div>
+                                    <NavLink to="" className="page_menu">
+                                        Онлаин регистрация
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Купить багаж
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Управление бронированием
                                     </NavLink>
                                 </div>
                             </div>}
-                        </div>
-                        <div className="pages_head">
-                            <NavLink to="/contact" className="page">Контакты</NavLink>
-                        </div>
-                        {local ?
-                            <div className="pages_head">
-                                <NavLink to="/dashboard" className="pagereg"> <div className="register">Личный кабинет</div></NavLink>
+                            <div className='pages_head'>
+                                <div
+                                    onMouseEnter={() => setInfo(true) || setBooking(false) || setAbout(false)}
+                                    className="page">Информация</div>
                             </div>
-                            :
-                            <>
-                                <div className="pages_head">
-                                    <NavLink to="/login" className="page">Войти</NavLink>
+                            {info && <div
+                                onMouseEnter={() => setInfo(true) || setBooking(false) || setAbout(false)}
+                                onMouseLeave={() => setInfo(false) || setBooking(false) || setAbout(false)} className="menu">
+                                <div className="menu_one">
+                                    <div className='page_menu_div'>Информация о поездке</div>
+                                    <NavLink to="" className="page_menu">
+                                        Багаж
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Нормы бесплатного провоза багажа
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Ручная кладь
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Путешествие с детьми и младенцами
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Перевозка несопровождаемых детей
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Перевозка беременных женщин
+                                    </NavLink>
+                                    <NavLink to="/info-page/dog" className="page_menu">
+                                        Перевозка питомцев
+                                    </NavLink>
                                 </div>
-                                <div className="pages_head">
-                                    <NavLink to="/register" className="pagereg"> <div className="register">Регистрация</div> </NavLink>
+                                <div className="menu_two">
+                                    <div className='page_menu_div'>Информация о бронировании</div>
+                                    <NavLink to="" className="page_menu">
+                                        Как забронировать билет?
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Изменение бронирования
+                                    </NavLink>
+                                    <NavLink to="" className="page_menu">
+                                        Возврат и отмена
+                                    </NavLink>
                                 </div>
-                            </>
-                        }
+                            </div>}
+                            <div className="pages">
+                                <div
+                                    onMouseEnter={() => setAbout(true) || setInfo(false) || setBooking(false)}
+                                    className="page">О компании</div>
+                                {about && <div
+                                    onMouseEnter={() => setAbout(true) || setInfo(false) || setBooking(false)}
+                                    onMouseLeave={() => setAbout(false) || setInfo(false) || setBooking(false)}
+                                    className="menu d">
+                                    <div className='menu_one'>
+                                        <div className='page_menu_div'>О компании</div>
+                                        <NavLink to="" className="page_menu">
+                                            О нас
+                                        </NavLink>
+                                        <NavLink to="" className="page_menu">
+                                            Галерея
+                                        </NavLink>
+                                        <NavLink to="" className="page_menu">
+                                            Наши партнеры
+                                        </NavLink>
+                                        <NavLink to="" className="page_menu">
+                                            Новости
+                                        </NavLink>
+                                    </div>
+                                </div>}
+                            </div>
+                            <div className="pages_head">
+                                <NavLink to="/contact" className="page" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}>Контакты</NavLink>
+                            </div>
+                            {local ?
+                                <div className="pages_head">
+                                    <NavLink to="/dashboard" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <div className="register">Личный кабинет</div></NavLink>
+                                </div>
+                                :
+                                <>
+                                    <div className="login">
+                                        <div className="pages_head">
+                                            <NavLink to="/register" className="page" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}>Регистрация</NavLink>
+                                        </div>
+                                        <div className="pages_head">
+                                            <NavLink to="/login" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <div className="register">Войти</div> </NavLink>
+                                        </div>
+                                    </div>
+                                </>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

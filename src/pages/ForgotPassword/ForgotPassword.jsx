@@ -41,25 +41,25 @@ const ForgotPassword = () => {
         <div className="login_form">
           <div className="login_form_head">
             <span className='h1'>
-              Восстановить аккаунт
+              Забыли пароль?
             </span>
           </div>
           <div className="login_form_body">
             <form onSubmit={handleSubmit} className="form_forgot">
-              <p>Укажите ваш Email, который использовался при регистрации</p>
+              <p>Мы отправим код на вашу электронную почту</p>
               <div className="input_box">
-                <label className="label_form">E-mail</label>
+                {/* <label className="label_form">E-mail</label> */}
                 <input
                   className="input_form"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   type="text"
-                  placeholder="E-mail"
+                  placeholder="Электронная почта"
                 />
                 {error.email && <p className="red">{error.email}</p>}
               </div>
               <button onSubmit={handleSubmit} className="button_form">
-                {loading ? <Loading color={"#fff"} /> : "Отправить"}
+                {loading ? <Loading color={"#fff"} /> : "Получить код"}
               </button>
             </form>
           </div>

@@ -75,18 +75,18 @@ const Activation = () => {
         <div className="login_form">
           <div className="login_form_head">
             <span className="h1">
-              Активация аккаунта
+              Введите код
             </span>
           </div>
           <div className="login_form_body">
-            <p>Введите код, который мы вам отправили на email</p>
+            <p>Мы отправили код на вашу электронную почту</p>
             <form onSubmit={fetchData}>
               <input
                 style={{ textAlign: "center" }}
                 className="input_form"
                 value={code}
                 type="number"
-                placeholder="Введите код"
+                placeholder="Код потверждения"
                 onChange={(e) => setCode(e.target.value)}
               />
               <button style={{ marginTop: 20 }} disabled={loading} onSubmit={fetchData} className="button_form">

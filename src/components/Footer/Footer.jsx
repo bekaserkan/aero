@@ -1,9 +1,9 @@
 import React from 'react'
 import "./Footer.css"
-import logo from "../../img/logo_f.png"
 import { NavLink } from 'react-router-dom'
-import { FaInstagram } from "react-icons/fa6";
-import { ImFacebook2 } from "react-icons/im";
+import tiktok from "../../img/tiktok.svg"
+import instagram from "../../img/instagram.svg"
+import facebook from "../../img/facebook.svg"
 
 const Footer = () => {
     return (
@@ -11,31 +11,35 @@ const Footer = () => {
             <div className="container">
                 <div className="foot">
                     <div>
-                        <NavLink to="/">
-                            <img src={logo} alt="" />
+                        <NavLink to="/" className="logo">
+                            Airtickets
                         </NavLink>
-                        <p>Aero Nomad Airlines © 2023.</p>
-                        <p>Все права защищены.</p>
+                        <p>годнее всего всегда оплачивать </p>
+                        <p>дополнительный багаж заранее</p>
+                        <div className='icons'>
+                            <div className="icon">
+                                <img src={facebook} alt="" />
+                            </div>
+                            <div className="icon">
+                                <img src={instagram} alt="" />
+                            </div>
+                            <div className="icon">
+                                <img src={tiktok} alt="" />
+                            </div>
+                        </div>
+                        <p className='all'>Все права защищены</p>
                     </div>
                     <div className='foot_div'>
+                        <h4>Компания</h4>
+                        <NavLink to="" className="foot_text">Бронирование и управление</NavLink>
+                        <NavLink to="" className="foot_text">Информация</NavLink>
                         <NavLink to="" className="foot_text">О компании</NavLink>
                         <NavLink to="" className="foot_text">Контакты</NavLink>
-                        <NavLink to="" className="foot_text">Направления</NavLink>
-                        <NavLink to="" className="foot_text">Политика</NavLink>
-                        <NavLink to="" className="foot_text">конфиденциальности</NavLink>
                     </div>
                     <div className='foot_div'>
-                        <NavLink to="" className="foot_text">Новости</NavLink>
-                        <NavLink to="" className="foot_text">Галерея</NavLink>
-                        <NavLink to="" className="foot_text">Войти</NavLink>
-                    </div>
-                    <div>
-                        <h3>Присоединяйтесь:</h3>
-                        <div className='icons'>
-                            <ImFacebook2 color='var(--white)' size={30} />
-                            <FaInstagram color='var(--white)' size={30} />
-                        </div>
-                        <p>Разработка и поддержка сайта kvskg.ru</p>
+                        <h4>+996 502 800 202</h4>
+                        <p>г. Бишкек ул. Токтогула 36/1</p>
+                        <p>График работы от 9:00 до 19:00</p>
                     </div>
                 </div>
             </div>

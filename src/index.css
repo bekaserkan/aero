@@ -97,10 +97,10 @@
 }
 
 :root {
-    --grayW: #818181;
-    --gray: rgb(222, 222, 222, 0.3);
+    --grayW: #F5F7FA;
+    --gray: #9F9F9F;
     --gblue: #00ADEE;
-    --blue: #2b3990;
+    --blue: #0F6EFE;
     --black: #081f2c;
     --white: #fdfdfd;
 }
