@@ -89,6 +89,10 @@
     font-family: Rubik, Gilroy, sans-serif;
 }
 
+body {
+    background: var(--grayW);
+}
+
 .container {
     margin: 0 auto;
     max-width: 1160px;

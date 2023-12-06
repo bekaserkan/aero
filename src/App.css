@@ -85,6 +85,10 @@
     color: var(--black);
 }
 
+.auth {
+    padding-bottom: 100px;
+}
+
 .login_form {
     margin: 5% auto;
     max-width: 400px;

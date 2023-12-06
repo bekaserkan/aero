@@ -45,58 +45,60 @@ const Login = () => {
     };
 
     return (
-        <div className='login'>
-            <div className="container">
-                <div className="login_form">
-                    <div className="login_form_head">
-                        <span className='h1'>
-                            Войти в аккаунт
-                        </span>
-                    </div>
-                    <div className="login_form_body">
-                        <form onSubmit={handleSubmit}>
-                            <div className="input_box">
-                                {/* <label className="label_form">E-mail</label> */}
-                                <input
-                                    className="input_form"
-                                    value={email}
-                                    type="text"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Электронная почта"
-                                />
-                                {errorLogin.email && <p className="red">{errorLogin.email}</p>}
-                            </div>
-                            <div className="input_box d">
-                                {/* <label className="label_form">Пароль</label> */}
-                                <input
-                                    className="input_form"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    type={visible ? "text" : "password"}
-                                    placeholder="Пароль"
-                                />
-                                <span className="span-icon" onClick={() => setVisible(!visible)}>
-                                    {visible ? <FaEye /> : <FaEyeSlash />}{" "}
-                                </span>
-                                {errorLogin.password && (
-                                    <p className="red">{errorLogin.password}</p>
-                                )}
-                            </div>
-                            <div className="forgot_password_link">
-                                <NavLink className="forgot" to="/forgot-password">
-                                    Забыли пароль?
-                                </NavLink>
-                            </div>
-                            <button style={{ margin: "20px 0" }} onSubmit={handleSubmit} className="button_form">
-                                {loading ? <Loading /> : "Войти"}
-                            </button>
-                            <p className="p_content">
-                                Ещё нет аккаунта?{" "}
-                                <NavLink className="a_content" to="/register">
-                                    Зарегистрироваться
-                                </NavLink>
-                            </p>
-                        </form>
+        <div className="auth">
+            <div className='login'>
+                <div className="container">
+                    <div className="login_form">
+                        <div className="login_form_head">
+                            <span className='h1'>
+                                Войти в аккаунт
+                            </span>
+                        </div>
+                        <div className="login_form_body">
+                            <form onSubmit={handleSubmit}>
+                                <div className="input_box">
+                                    {/* <label className="label_form">E-mail</label> */}
+                                    <input
+                                        className="input_form"
+                                        value={email}
+                                        type="text"
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        placeholder="Электронная почта"
+                                    />
+                                    {errorLogin.email && <p className="red">{errorLogin.email}</p>}
+                                </div>
+                                <div className="input_box d">
+                                    {/* <label className="label_form">Пароль</label> */}
+                                    <input
+                                        className="input_form"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        type={visible ? "text" : "password"}
+                                        placeholder="Пароль"
+                                    />
+                                    <span className="span-icon" onClick={() => setVisible(!visible)}>
+                                        {visible ? <FaEye /> : <FaEyeSlash />}{" "}
+                                    </span>
+                                    {errorLogin.password && (
+                                        <p className="red">{errorLogin.password}</p>
+                                    )}
+                                </div>
+                                <div className="forgot_password_link">
+                                    <NavLink className="forgot" to="/forgot-password">
+                                        Забыли пароль?
+                                    </NavLink>
+                                </div>
+                                <button style={{ margin: "20px 0" }} onSubmit={handleSubmit} className="button_form">
+                                    {loading ? <Loading /> : "Войти"}
+                                </button>
+                                <p className="p_content">
+                                    Ещё нет аккаунта?{" "}
+                                    <NavLink className="a_content" to="/register">
+                                        Зарегистрироваться
+                                    </NavLink>
+                                </p>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

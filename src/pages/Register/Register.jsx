@@ -60,118 +60,119 @@ const Register = () => {
   console.log(inputData.email);
 
   return (
-    <div className='register'>
-      <div className="container">
-        <div className="login_form">
-          <div className="login_form_head">
-            <span className='h1'>
-              Регистрация
-            </span>
-          </div>
-          <div className="login_form_body">
-            <form onSubmit={handleSubmit} className="register_from">
-              <div className="register_grid">
-                <div className="input_box">
-                  {/* <label className="label_form">Имя</label> */}
-                  <input
-                    className="input_form"
-                    type="text"
-                    value={inputData.first_name}
-                    onChange={(e) =>
-                      setInputData({ ...inputData, first_name: e.target.value })
-                    }
-                    name="first_name"
-                    placeholder="Имя"
-                    required
-                  />
-                  {error.first_name && <p className="red">{error.first_name}</p>}
+    <div className="auth">
+      <div className='register'>
+        <div className="container">
+          <div className="login_form">
+            <div className="login_form_head">
+              <span className='h1'>
+                Регистрация
+              </span>
+            </div>
+            <div className="login_form_body">
+              <form onSubmit={handleSubmit} className="register_from">
+                <div className="register_grid">
+                  <div className="input_box">
+                    {/* <label className="label_form">Имя</label> */}
+                    <input
+                      className="input_form"
+                      type="text"
+                      value={inputData.first_name}
+                      onChange={(e) =>
+                        setInputData({ ...inputData, first_name: e.target.value })
+                      }
+                      name="first_name"
+                      placeholder="Имя"
+                      required
+                    />
+                    {error.first_name && <p className="red">{error.first_name}</p>}
+                  </div>
+                  <div className="input_box">
+                    {/* <label className="label_form">Фамилия</label> */}
+                    <input
+                      className="input_form"
+                      type="text"
+                      value={inputData.last_name}
+                      onChange={(e) =>
+                        setInputData({ ...inputData, last_name: e.target.value })
+                      }
+                      name="last_name"
+                      placeholder="Фамилия"
+                      required
+                    />
+                    {error.last_name && <p className="red">{error.last_name}</p>}
+                  </div>
+                  <div className="input_box">
+                    {/* <label className="label_form">Номер телефона</label> */}
+                    <input
+                      className="input_form"
+                      type="number"
+                      placeholder="Введите номер"
+                      value={inputData.phone}
+                      onChange={(e) =>
+                        setInputData({ ...inputData, phone: e.target.value })
+                      }
+                      name="phone"
+                      required
+                    />
+                    {error.phone && <p className="red">{error.phone}</p>}
+                  </div>
+                  <div className="input_box">
+                    {/* <label className="label_form">E-mail</label> */}
+                    <input
+                      className="input_form"
+                      onChange={(e) =>
+                        setInputData({ ...inputData, email: e.target.value })
+                      }
+                      value={inputData.email}
+                      type="text"
+                      placeholder="E-mail"
+                      required
+                    />
+                    {error.email && <p className="red">{error.email}</p>}
+                  </div>
+                  <div className="input_box">
+                    {/* <label className="label_form">Пароль</label> */}
+                    <input
+                      className="input_form"
+                      onChange={(e) =>
+                        setInputData({ ...inputData, password: e.target.value })
+                      }
+                      value={inputData.password}
+                      type={visible ? "text" : "password"}
+                      placeholder="Пароль"
+                      required
+                    />
+                    <span className="span-icon" onClick={() => setVisible(!visible)}>
+                      {" "}
+                      {visible ? <FaEye /> : <FaEyeSlash />}{" "}
+                    </span>
+                    {error.confirm_password && (
+                      <p className="red">{error.confirm_password}</p>
+                    )}
+                    {error.non_field_errors && (
+                      <p className="red">{error.non_field_errors}</p>
+                    )}
+                  </div>
+                  <div className="input_box hh">
+                    {/* <label className="label_form"> Повторить пороль </label> */}
+                    <input
+                      className="input_form"
+                      onChange={(e) =>
+                        setInputData({ ...inputData, confirm_password: e.target.value })
+                      }
+                      value={inputData.confirm_password}
+                      type={visible2 ? "text" : "password"}
+                      placeholder="Повторить пороль"
+                      required
+                    />
+                    <span className="span-icon" onClick={() => setVisible2(!visible2)}>
+                      {" "}
+                      {visible2 ? <FaEye /> : <FaEyeSlash />}{" "}
+                    </span>
+                  </div>
                 </div>
-                <div className="input_box">
-                  {/* <label className="label_form">Фамилия</label> */}
-                  <input
-                    className="input_form"
-                    type="text"
-                    value={inputData.last_name}
-                    onChange={(e) =>
-                      setInputData({ ...inputData, last_name: e.target.value })
-                    }
-                    name="last_name"
-                    placeholder="Фамилия"
-                    required
-                  />
-                  {error.last_name && <p className="red">{error.last_name}</p>}
-                </div>
-                <div className="input_box">
-                  {/* <label className="label_form">Номер телефона</label> */}
-                  <input
-                    className="input_form"
-                    type="number"
-                    placeholder="Введите номер"
-                    value={inputData.phone}
-                    onChange={(e) =>
-                      setInputData({ ...inputData, phone: e.target.value })
-                    }
-                    name="phone"
-                    required
-                  />
-                  {error.phone && <p className="red">{error.phone}</p>}
-                </div>
-                <div className="input_box">
-                  {/* <label className="label_form">E-mail</label> */}
-                  <input
-                    className="input_form"
-                    onChange={(e) =>
-                      setInputData({ ...inputData, email: e.target.value })
-                    }
-                    value={inputData.email}
-                    type="text"
-                    placeholder="E-mail"
-                    required
-                  />
-                  {error.email && <p className="red">{error.email}</p>}
-                </div>
-                <div className="input_box">
-                  {/* <label className="label_form">Пароль</label> */}
-                  <input
-                    className="input_form"
-                    onChange={(e) =>
-                      setInputData({ ...inputData, password: e.target.value })
-                    }
-                    value={inputData.password}
-                    type={visible ? "text" : "password"}
-                    placeholder="Пароль"
-                    required
-                  />
-                  <span className="span-icon" onClick={() => setVisible(!visible)}>
-                    {" "}
-                    {visible ? <FaEye /> : <FaEyeSlash />}{" "}
-                  </span>
-                  {error.confirm_password && (
-                    <p className="red">{error.confirm_password}</p>
-                  )}
-                  {error.non_field_errors && (
-                    <p className="red">{error.non_field_errors}</p>
-                  )}
-                </div>
-                <div className="input_box hh">
-                  {/* <label className="label_form"> Повторить пороль </label> */}
-                  <input
-                    className="input_form"
-                    onChange={(e) =>
-                      setInputData({ ...inputData, confirm_password: e.target.value })
-                    }
-                    value={inputData.confirm_password}
-                    type={visible2 ? "text" : "password"}
-                    placeholder="Повторить пороль"
-                    required
-                  />
-                  <span className="span-icon" onClick={() => setVisible2(!visible2)}>
-                    {" "}
-                    {visible2 ? <FaEye /> : <FaEyeSlash />}{" "}
-                  </span>
-                </div>
-              </div>
-              {/* <p className="p_content">
+                {/* <p className="p_content">
                 Нажимая на кнопку «Регистрация», Вы принимаете условия{" "}
                 <a
                   className="a_content"
@@ -181,18 +182,19 @@ const Register = () => {
                   Публичной оферты
                 </a>{" "}
               </p> */}
-              <div className="all-submit">
-                <button style={{ margin: "20px 0" }} disabled={loading} className="button_form" onSubmit={handleSubmit}>
-                  {loading ? <Loading color={"#fff"} /> : "Регистрация"}
-                </button>
-              </div>
-              <p className="p_content">
-                Уже есть аккаунт ?{" "}
-                <NavLink className="a_content" to="/login">
-                  Войти
-                </NavLink>
-              </p>
-            </form>
+                <div className="all-submit">
+                  <button style={{ margin: "20px 0" }} disabled={loading} className="button_form" onSubmit={handleSubmit}>
+                    {loading ? <Loading color={"#fff"} /> : "Регистрация"}
+                  </button>
+                </div>
+                <p className="p_content">
+                  Уже есть аккаунт ?{" "}
+                  <NavLink className="a_content" to="/login">
+                    Войти
+                  </NavLink>
+                </p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
