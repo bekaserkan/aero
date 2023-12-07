@@ -57,6 +57,11 @@
     transition: .2s ease;
 }
 
+
+.header_fixet .page.link {
+    color: var(--gray);
+}
+
 .header_fixet .page.active {
     color: var(--blue);
 }

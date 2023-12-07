@@ -127,11 +127,8 @@ const Header = ({ local }) => {
                                     className="menu d">
                                     <div className='menu_one'>
                                         <div className='page_menu_div'>О компании</div>
-                                        <NavLink to="" className="page_menu">
+                                        <NavLink to="/about" className="page_menu">
                                             О нас
-                                        </NavLink>
-                                        <NavLink to="" className="page_menu">
-                                            Галерея
                                         </NavLink>
                                         <NavLink to="" className="page_menu">
                                             Наши партнеры
@@ -153,7 +150,7 @@ const Header = ({ local }) => {
                                 <>
                                     <div className="login">
                                         <div className="pages_head">
-                                            <NavLink to="/register" className="page" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}>Регистрация</NavLink>
+                                            <NavLink to="/register" className="page link" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}>Регистрация</NavLink>
                                         </div>
                                         <div className="pages_head">
                                             <NavLink to="/login" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <div className="register">Войти</div> </NavLink>

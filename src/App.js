@@ -45,6 +45,7 @@ function App() {
         <Route path='activation/:verify' element={<Activation />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='info-page/:info' element={<InfoPage />} />
+        <Route path='about' element={<About />} />
         <Route path='dashboard' element={<div></div>} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
