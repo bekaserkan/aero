@@ -12,6 +12,7 @@ import ForgotPassword from './pages/ForgotPassword/ForgotPassword';
 import Activation from './pages/Activation/Activation';
 import { useEffect, useState } from 'react';
 import InfoPage from './pages/InfoPage/InfoPage';
+import Ticket from './pages/Ticket/Ticket';
 
 function App() {
   const [local, setLocal] = useState()
@@ -38,6 +39,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='contact' element={<Contact />} />
+        <Route path='ticket' element={<Ticket />} />
         <Route path='about' element={<About />} />
         <Route path='about/:partner' element={<About />} />
         <Route path='login' element={<Login />} />

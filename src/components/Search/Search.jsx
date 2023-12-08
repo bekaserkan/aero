@@ -3,8 +3,10 @@ import "./Search.css"
 import Slider from 'react-slick';
 import slide1 from "../../img/baner.svg"
 import slide2 from "../../img/baner2.svg"
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
+    const navigate = useNavigate()
 
     const settings = {
         dots: false,
@@ -39,7 +41,7 @@ const Search = () => {
                         <input type="date" />
                         <input className='border2' type="text" />
                     </div>
-                    <button>Найти</button>
+                    <button onClick={() => navigate("/ticket")} >Найти</button>
                 </div>
             </div>
         </div>
