@@ -130,7 +130,7 @@ const Header = ({ local }) => {
                                         <NavLink to="/about" className="page_menu">
                                             О нас
                                         </NavLink>
-                                        <NavLink to="" className="page_menu">
+                                        <NavLink to="/about" className="page_menu">
                                             Наши партнеры
                                         </NavLink>
                                         <NavLink to="" className="page_menu">

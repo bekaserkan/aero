@@ -39,6 +39,7 @@ function App() {
         <Route path='/' element={<Main />} />
         <Route path='contact' element={<Contact />} />
         <Route path='about' element={<About />} />
+        <Route path='about/:partner' element={<About />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route path='activation' element={<Activation />} />

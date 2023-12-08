@@ -1,9 +1,11 @@
 .contact {
+    padding-top: 40px;
     width: 100%;
+    background: var(--white);
+    padding-bottom: 250px;
 }
 
 .contact .contact_block {
-    margin-top: 100px;
     width: 100%;
     min-height: 0;
 
@@ -13,45 +15,54 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
 }
 
 .contact .contact_head .btn {
     padding: 18px 45px;
-    background: var(--blue);
-    font-size: 16px;
-    color: var(--white);
+    font-size: 18px;
+    color: var(--black);
     transition: .2s ease;
     cursor: pointer;
     border-radius: 5px 5px 0 0;
+    border-bottom: 2px solid var(--3, #DBDBDB);
 }
 
 .contact .contact_head .btn.active {
     font-weight: 400;
     color: var(--blue);
-    background: var(--white);
+    border-bottom: 2px solid var(--blue);
 }
 
 .contact .contact_body {
-    padding: 50px;
-    border: 1px solid #ccc;
+    margin-top: 40px;
     border-radius: 0 0 5px 5px;
 }
 
 .contact .h1 {
     font-size: 25px;
     font-weight: 400;
-    color: var(--blue);
+    color: var(--black);
 }
 
 .contact .contact_box {
-    margin-top: 30px;
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact .contant {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact .contant.w {
+    margin-top: 30px;
 }
 
 .contact .contact_box .h3 {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--black);
 }
@@ -65,13 +76,8 @@
 .contact .contact_box a {
     font-size: 15px;
     font-weight: 300;
-    color: var(--gblue);
+    color: var(--blue);
     text-decoration: none;
-}
-
-.contact .contact_box .icon {
-    font-size: 30px;
-    color: var(--gblue);
 }
 
 .contact .contact_box .box {
@@ -80,7 +86,13 @@
     gap: 5px;
 }
 
+.contact .icon {
+    width: 24px;
+    height: 24px;
+}
+
 .contact .map {
+    margin-top: 40px;
     width: 100%;
     height: 400px;
 }
@@ -88,5 +100,6 @@
 .contact .map_google {
     width: 100%;
     height: 100%;
-    border: 1px solid #ccc;
+    border: none;
+    border-radius: 30px;
 }
