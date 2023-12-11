@@ -13,6 +13,7 @@ import Activation from './pages/Activation/Activation';
 import { useEffect, useState } from 'react';
 import InfoPage from './pages/InfoPage/InfoPage';
 import Ticket from './pages/Ticket/Ticket';
+import Booking from './pages/Booking/Booking';
 
 function App() {
   const [local, setLocal] = useState()
@@ -48,6 +49,7 @@ function App() {
         <Route path='activation/:verify' element={<Activation />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='info-page/:info' element={<InfoPage />} />
+        <Route path='booking' element={<Booking />} />
         <Route path='about' element={<About />} />
         <Route path='dashboard' element={<div></div>} />
         <Route path='*' element={<NotFoundPage />} />

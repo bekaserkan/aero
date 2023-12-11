@@ -5,9 +5,11 @@ import line1 from "../../img/Line 1.svg"
 import line2 from "../../img/Line 2.svg"
 import refresh from "../../img/refresh.svg"
 import close from "../../img/close.svg"
+import { useNavigate } from 'react-router-dom'
 
 const Ticket = () => {
   const [modal, setModal] = useState(true)
+  const navigate = useNavigate()
 
   return (
     <div className='ticket'>
@@ -176,7 +178,7 @@ const Ticket = () => {
                 </div>
                 <p>За всех пассажиров</p>
               </div>
-              <button>Выбрать</button>
+              <button onClick={() => navigate("/booking")}>Выбрать</button>
             </div>
           </div>
         </div>
