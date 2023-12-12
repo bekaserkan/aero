@@ -5,7 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { url } from '../../Api';
 import Loading from '../../components/UI/Loading/Loading';
 
-const Login = () => {
+const Login = ({ setLoginModal }) => {
     const [visible, setVisible] = useState(false);
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
