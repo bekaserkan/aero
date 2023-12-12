@@ -1,0 +1,121 @@
+.profile {
+    width: 100%;
+    padding-bottom: 250px;
+}
+
+.profile .title {
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.profile .profile_head {
+    margin-top: 40px;
+    display: flex;
+    gap: 40px;
+}
+
+.profile .profile_page {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--black);
+    cursor: pointer;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #cdcdcd;
+    transition: .2s ease;
+}
+
+.profile .profile_page.active {
+    border-bottom: 2px solid var(--blue);
+}
+
+.profile .not_data {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile .not_data img {
+    width: 112px;
+}
+
+.profile .not_data .not_data_title {
+    margin-top: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--black);
+}
+
+.profile .not_data .not_data_text {
+    margin-top: 7px;
+    font-size: 16px;
+    font-weight: 300;
+    color: #575757;
+}
+
+.profile .ticket_profile {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile .bilet {
+    width: 60%;
+    padding: 30px;
+    border-radius: 30px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 70px;
+}
+
+.profile .flex_box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile .flex_title {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.profile .flex_code {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--gray);
+}
+
+.profile .date {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.profile .bilet p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--gray);
+}
+
+.profile .border {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-left: 1px solid var(--3, #DBDBDB);
+}
+
+.profile .circle{
+    
+}

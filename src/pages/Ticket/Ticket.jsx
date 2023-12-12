@@ -3,9 +3,9 @@ import "./Ticket.css"
 import air from "../../img/air.svg"
 import line1 from "../../img/Line 1.svg"
 import line2 from "../../img/Line 2.svg"
-import refresh from "../../img/refresh.svg"
-import close from "../../img/close.svg"
 import { useNavigate } from 'react-router-dom'
+import refresh from "../../img/refresh.svg"
+import Modal from '../../components/UI/Modal/Modal'
 
 const Ticket = () => {
   const [modal, setModal] = useState(true)
@@ -184,20 +184,7 @@ const Ticket = () => {
         </div>
       </div>
       {modal &&
-        <div className="fixet_modal">
-          <div onClick={() => setModal(false)} className="modal_not"></div>
-          <div className="modal">
-            <img src={refresh} alt="" />
-            <img onClick={() => setModal(false)} className='close' src={close} alt="" />
-            <p className="modal_title">
-              Результаты могли устареть
-            </p>
-            <p className='modal_text'>
-              Цены на билеты обновляются около 10 раз в день. Обновите поиск, чтобы увидеть точные даты
-            </p>
-            <button className='modal_btn'>Обновить</button>
-          </div>
-        </div>
+        <Modal img={refresh} title={"Результаты могли устареть"} text={"Цены на билеты обновляются около 10 раз в день. Обновите поиск, чтобы увидеть точные даты"} btn={"Обновить"} setModal={setModal} />
       }
     </div>
   )

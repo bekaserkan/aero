@@ -37,7 +37,7 @@ const Activation = () => {
         });
         if (response.data.response === true) {
           localStorage.setItem("email", email);
-          localStorage.setItem("token ", response.data.token);
+          localStorage.setItem("token", response.data.token);
           if (verify !== "verify") {
             alert(response.data.message, "success");
           }

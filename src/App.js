@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 import InfoPage from './pages/InfoPage/InfoPage';
 import Ticket from './pages/Ticket/Ticket';
 import Booking from './pages/Booking/Booking';
+import Profile from './pages/Profile/Profile';
 
 function App() {
   const [local, setLocal] = useState()
@@ -22,7 +23,8 @@ function App() {
   console.log(local);
 
   useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token ")
+    console.log(token);
     setLocal(token)
   }, [location])
 
@@ -51,7 +53,7 @@ function App() {
         <Route path='info-page/:info' element={<InfoPage />} />
         <Route path='booking' element={<Booking />} />
         <Route path='about' element={<About />} />
-        <Route path='dashboard' element={<div></div>} />
+        <Route path='dashboard' element={ <Profile /> } />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <Footer />

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import "./Header.css"
 import { NavLink } from 'react-router-dom'
-import logo from "../../img/logo_h.png"
-import { IoIosAirplane } from "react-icons/io";
+import profile from "../../img/profile.svg"
 
 const Header = ({ local }) => {
     const [booking, setBooking] = useState(false)
     const [info, setInfo] = useState(false)
     const [about, setAbout] = useState(false)
+    
+    console.log(local);
 
     function close() {
         setBooking(false)
@@ -144,7 +145,7 @@ const Header = ({ local }) => {
                             </div>
                             {local ?
                                 <div className="pages_head">
-                                    <NavLink to="/dashboard" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <div className="register">Личный кабинет</div></NavLink>
+                                    <NavLink to="/dashboard" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <img className='profile' src={profile} alt="" /></NavLink>
                                 </div>
                                 :
                                 <>
