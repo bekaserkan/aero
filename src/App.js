@@ -15,6 +15,7 @@ import InfoPage from './pages/InfoPage/InfoPage';
 import Ticket from './pages/Ticket/Ticket';
 import Booking from './pages/Booking/Booking';
 import Profile from './pages/Profile/Profile';
+import DetailTicket from './pages/DetailTicket/DetailTicket';
 
 function App() {
   const [local, setLocal] = useState()
@@ -53,7 +54,8 @@ function App() {
         <Route path='info-page/:info' element={<InfoPage />} />
         <Route path='booking' element={<Booking />} />
         <Route path='about' element={<About />} />
-        <Route path='dashboard' element={ <Profile /> } />
+        <Route path='dashboard' element={<Profile />} />
+        <Route path='detail-ticket/:ticket' element={<DetailTicket />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <Footer />

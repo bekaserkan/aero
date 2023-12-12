@@ -69,6 +69,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 70px;
+    cursor: pointer;
 }
 
 .profile .flex_box {
@@ -110,12 +111,47 @@
 
 .profile .border {
     display: flex;
+    align-items: flex-end;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
     border-left: 1px solid var(--3, #DBDBDB);
 }
 
-.profile .circle{
-    
+.profile .status {
+    font-size: 14px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.profile .circle.green {
+    background: #14DD0F;
+}
+
+.profile .circle.gray {
+    background: #9F9F9F;
+}
+
+.profile .circle.red {
+    background: #F22B37;
+}
+
+.profile .status.green {
+    color: #14DD0F;
+}
+
+.profile .status.gray {
+    color: #9F9F9F;
+}
+
+.profile .status.red {
+    color: #F22B37;
 }

@@ -177,7 +177,7 @@
     margin-bottom: 10px;
 }
 
-.header_fixet .profile{
-    width: 45px;
-    height: 45px;
+.header_fixet .profile_image{
+    width: 45px !important;
+    height: 45px !important;
 }

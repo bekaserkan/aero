@@ -102,7 +102,7 @@ const Booking = () => {
                             </div>
                             <p>Стоимость указана за всех пассажиров</p>
                             <div className="flex">
-                                <div onClick={() => setStatus({ ...status, lite: !status.lite, premium: false })} className={status.lite ? "status active" : "status"}>
+                                <div onClick={() => setStatus({ ...status, lite: true, premium: false })} className={status.lite ? "status active" : "status"}>
                                     <h3>Лайт</h3>
                                     <span className='price'>19 799</span>
                                     <p><img src={icon1} alt="" />Ручная кладь до 7 кг</p>
@@ -110,7 +110,7 @@ const Booking = () => {
                                     <p><img src={icon3} alt="" />Обмен билета до вылета(более 24-часов)</p>
                                     <p><img src={icon4} alt="" />Возврат билета до вылета(более 24-часов)</p>
                                 </div>
-                                <div onClick={() => setStatus({ ...status, lite: false, premium: !status.premium })} className={status.premium ? "status active" : "status"}>
+                                <div onClick={() => setStatus({ ...status, lite: false, premium: true })} className={status.premium ? "status active" : "status"}>
                                     <h3>Премиум</h3>
                                     <span className='price'>25 420</span>
                                     <p><img src={icon1} alt="" />Ручная кладь до 7 кг</p>
@@ -162,8 +162,8 @@ const BookingData = () => {
                 <input type="text" placeholder='Фамилия' />
                 <input type="date" placeholder='Дата рождения' />
                 <div className='btns'>
-                    <button onClick={() => setGanger({ ...ganger, men: !ganger.men, women: false })} style={{ background: ganger.men ? "var(--blue)" : "none", color: ganger.men ? "var(--white)" : "#9F9F9F" }}>Мужской</button>
-                    <button onClick={() => setGanger({ ...ganger, men: false, women: !ganger.women })} style={{ background: ganger.women ? "var(--blue)" : "none", color: ganger.women ? "var(--white)" : "#9F9F9F" }}>Женский</button>
+                    <button onClick={() => setGanger({ ...ganger, men: true, women: false })} style={{ background: ganger.men ? "var(--blue)" : "none", color: ganger.men ? "var(--white)" : "#9F9F9F" }}>Мужской</button>
+                    <button onClick={() => setGanger({ ...ganger, men: false, women: true })} style={{ background: ganger.women ? "var(--blue)" : "none", color: ganger.women ? "var(--white)" : "#9F9F9F" }}>Женский</button>
                 </div>
             </div>
         </div>

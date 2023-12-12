@@ -145,7 +145,7 @@ const Header = ({ local }) => {
                             </div>
                             {local ?
                                 <div className="pages_head">
-                                    <NavLink to="/dashboard" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <img className='profile' src={profile} alt="" /></NavLink>
+                                    <NavLink to="/dashboard" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <img className='profile_image' src={profile} alt="" /></NavLink>
                                 </div>
                                 :
                                 <>
