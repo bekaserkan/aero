@@ -6,14 +6,15 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/UI/Loading/Loading";
 
-const Activation = () => {
+const Activation = ({
+  setLoginModal,
+  etRegisterModal
+}) => {
   const { verify } = useParams()
   const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-
-  console.log(verify);
 
   useEffect(() => {
     const savedEmail = localStorage.getItem("email");
@@ -42,6 +43,11 @@ const Activation = () => {
             alert(response.data.message, "success");
           }
           navigate("/dashboard");
+          if (verify === "verify") {
+            setLoginModal(true)
+          } else {
+            etRegisterModal(true)
+          }
         } else {
           alert(response.data.message, "error");
         }

@@ -18,10 +18,10 @@ import Profile from './pages/Profile/Profile';
 import DetailTicket from './pages/DetailTicket/DetailTicket';
 
 function App() {
+  const [loginModal, setLoginModal] = useState(false)
+  const [registerModal, setRegisterModal] = useState(false)
   const [local, setLocal] = useState()
   const location = useLocation();
-
-  console.log(local);
 
   useEffect(() => {
     const token = localStorage.getItem("token ")
@@ -46,15 +46,21 @@ function App() {
         <Route path='ticket' element={<Ticket />} />
         <Route path='about' element={<About />} />
         <Route path='about/:partner' element={<About />} />
-        <Route path='login' element={<Login />} />
+        <Route path='login' element={<Login setLoginModal={setLoginModal} />} />
         <Route path='register' element={<Register />} />
-        <Route path='activation' element={<Activation />} />
-        <Route path='activation/:verify' element={<Activation />} />
+        <Route path='activation' element={<Activation setLoginModal={setLoginModal} setRegisterModal={setRegisterModal} />} />
+        <Route path='activation/:verify' element={<Activation setLoginModal={setLoginModal} setRegisterModal={setRegisterModal} />} />
         <Route path='forgot-password' element={<ForgotPassword />} />
         <Route path='info-page/:info' element={<InfoPage />} />
         <Route path='booking' element={<Booking />} />
         <Route path='about' element={<About />} />
-        <Route path='dashboard' element={<Profile />} />
+        <Route path='dashboard' element={
+          <Profile
+            loginModal={loginModal}
+            setLoginModal={setLoginModal}
+            registerModal={registerModal}
+            setRegisterModal={setRegisterModal}
+          />} />
         <Route path='detail-ticket/:ticket' element={<DetailTicket />} />
         <Route path='*' element={<NotFoundPage />} />
       </Routes>

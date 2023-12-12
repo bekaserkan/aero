@@ -10,8 +10,9 @@ import axios from 'axios'
 import { url } from '../../Api'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Loading from "../../components/UI/Loading/Loading";
+import check from "../../img/check.svg"
 
-const Profile = () => {
+const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal }) => {
     const [data, setData] = useState(true)
     const [ticket, setTicket] = useState(false)
     const [disabled, setDisabled] = useState(true)
@@ -40,8 +41,6 @@ const Profile = () => {
     const headers = {
         Authorization: `Token ${local}`,
     };
-
-    console.log(headers);
 
     const ChangeFunc = async (e) => {
         e.preventDefault();
@@ -95,6 +94,26 @@ const Profile = () => {
 
     return (
         <div className='profile'>
+            {loginModal && <Modal setModal={setLoginModal} >
+                <img src={check} alt="" />
+                <p className="modal_title">
+                    С возвращением, Нурзида!
+                </p>
+                <p className='modal_text'>
+                    Теперь вы можете легко и просто найти и покупать билеты в Airtickets
+                </p>
+                <button className='modal_btn'>Понятно</button>
+            </Modal>}
+            {registerModal && <Modal setModal={setRegisterModal} >
+                <img src={check} alt="" />
+                <p className="modal_title">
+                    Добро пожаловать, Нурзида!
+                </p>
+                <p className='modal_text'>
+                    Теперь вы можете легко и просто найти и покупать билеты в Airtickets
+                </p>
+                <button className='modal_btn'>Понятно</button>
+            </Modal>}
             {modal && <Modal setModal={setModal}>
                 <p className='modal_title'>Сменить пароль</p>
                 <p className='modal_text'>Придумайте новый пароль и введите его ещё раз для потверждения</p>
