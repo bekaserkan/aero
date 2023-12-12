@@ -155,3 +155,58 @@
 .profile .status.red {
     color: #F22B37;
 }
+
+.profile .data {
+    margin-top: 40px;
+    width: 60%;
+    padding: 30px;
+    border-radius: 30px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.profile .red_text,
+.profile .blue_text {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    color: var(--blue);
+    margin-left: auto;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.profile .red_text {
+    color: #F22B37;
+    margin: 0;
+    margin-top: 50px;
+}
+
+.profile .preview {
+    position: relative;
+}
+
+.profile .absolute {
+    position: absolute;
+    left: 30px;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.profile .input_form.disabled {
+    cursor: not-allowed;
+    color: #9F9F9F;
+    background: var(--2, #E8E8E8);
+}
+
+.profile .form_password{
+    margin-top: 30px;
+    width: 100%;
+}
+
+.profile .modal_title{
+    margin: 0;
+}

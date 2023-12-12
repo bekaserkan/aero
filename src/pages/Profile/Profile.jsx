@@ -1,16 +1,169 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Profile.css"
 import empty from "../../img/empty_bought_tickets.png"
 import arrow from "../../img/arrow_direct.svg"
 import { useNavigate } from 'react-router-dom'
+import profile from "../../img/profile.svg"
+import change from "../../img/change.svg"
+import Modal from '../../components/UI/Modal/Modal'
+import axios from 'axios'
+import { url } from '../../Api'
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Loading from "../../components/UI/Loading/Loading";
 
 const Profile = () => {
     const [data, setData] = useState(true)
     const [ticket, setTicket] = useState(false)
+    const [disabled, setDisabled] = useState(true)
+    const [modal, setModal] = useState(false)
     const navigate = useNavigate()
+    const [visible, setVisible] = useState({
+        visible1: false,
+        visible2: false,
+        visible3: false,
+    });
+    const [password, setPassword] = useState({
+        old_password: "",
+        new_password: "",
+        confirm_password: "",
+    });
+    const [loading, setLoading] = useState(false);
+    const [local, setLocal] = useState();
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            setLocal(token);
+        }
+    }, []);
+
+    const headers = {
+        Authorization: `Token ${local}`,
+    };
+
+    console.log(headers);
+
+    const ChangeFunc = async (e) => {
+        e.preventDefault();
+        if (
+            password.new_password !== "" &&
+            password.old_password !== "" &&
+            password.confirm_password !== ""
+        ) {
+            if (password.new_password == password.confirm_password) {
+                if (
+                    password.new_password.length >= 8 &&
+                    password.confirm_password.length >= 8
+                ) {
+                    setLoading(true);
+                    try {
+                        const response = await axios.post(
+                            url + "/auth/change-password/",
+                            {
+                                old_password: password.old_password,
+                                new_password: password.new_password,
+                                confirm_password: password.confirm_password,
+                            },
+                            { headers }
+                        );
+                        if (response.data.response === true) {
+                            alert(response.data.message, "success");
+                            setPassword({
+                                ...password,
+                                old_password: "",
+                                new_password: "",
+                                confirm_password: "",
+                            });
+                        } else {
+                            alert(response.data.message, "error");
+                        }
+                        setLoading(false);
+                    } catch (error) {
+                        setLoading(false);
+                        console.log(error);
+                    }
+                } else {
+                    alert("Новый пароль должен быть не менее 8-ми символов", "error");
+                }
+            } else {
+                alert("Пароли не совпадают", "error");
+            }
+        } else {
+            alert("Заполните все поля!", "error");
+        }
+    };
 
     return (
         <div className='profile'>
+            {modal && <Modal setModal={setModal}>
+                <p className='modal_title'>Сменить пароль</p>
+                <p className='modal_text'>Придумайте новый пароль и введите его ещё раз для потверждения</p>
+                <form onSubmit={ChangeFunc} className="form_password">
+                    <div className="input_box">
+                        <input
+                            className="input_form"
+                            value={password.old_password}
+                            onChange={(e) =>
+                                setPassword({ ...password, old_password: e.target.value })
+                            }
+                            type={visible.visible1 ? "text" : "password"}
+                            placeholder="Старый пароль"
+                            required
+                        />
+                        <span
+                            className="span-icon"
+                            onClick={() =>
+                                setVisible({ ...visible, visible1: !visible.visible1 })
+                            }
+                        >
+                            {visible.visible1 ? <FaEye /> : <FaEyeSlash />}{" "}
+                        </span>
+                    </div>
+                    <div className="input_box">
+                        <input
+                            className="input_form"
+                            value={password.new_password}
+                            onChange={(e) =>
+                                setPassword({ ...password, new_password: e.target.value })
+                            }
+                            type={visible.visible2 ? "text" : "password"}
+                            placeholder="Новый пароль"
+                            required
+                        />
+                        <span
+                            className="span-icon"
+                            onClick={() =>
+                                setVisible({ ...visible, visible2: !visible.visible2 })
+                            }
+                        >
+                            {visible.visible2 ? <FaEye /> : <FaEyeSlash />}{" "}
+                        </span>
+                    </div>
+                    <div className="input_box">
+                        <input
+                            className="input_form"
+                            value={password.confirm_password}
+                            onChange={(e) =>
+                                setPassword({ ...password, confirm_password: e.target.value })
+                            }
+                            type={visible.visible3 ? "text" : "password"}
+                            placeholder="Повторите пароль"
+                            required
+                        />
+                        <span
+                            className="span-icon"
+                            onClick={() =>
+                                setVisible({ ...visible, visible3: !visible.visible3 })
+                            }
+                        >
+                            {visible.visible3 ? <FaEye /> : <FaEyeSlash />}{" "}
+                        </span>
+                    </div>
+                    <button disabled={loading} onSubmit={ChangeFunc} className="button_form">
+                        {loading ? <Loading color={"#fff"} /> : "Сменить пароль"}
+                    </button>
+                </form>
+            </Modal>}
             <div className="container">
                 <div className="title">Профиль</div>
                 <div className="profile_head">
@@ -21,6 +174,24 @@ const Profile = () => {
                         Мои билеты
                     </div>
                 </div>
+                {data && <div className="profile_data">
+                    <div className="data">
+                        <div className="preview">
+                            <img src={profile} alt="" />
+                            <img className='absolute' src={change} alt="" />
+                        </div>
+                        <p onClick={() => setDisabled(!disabled)} className='blue_text'>Редактировать</p>
+                        <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Имя' />
+                        <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Фамилия' />
+                        <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Номер' />
+                        <input disabled={true} className='input_form disabled' type="text" placeholder='email' />
+                        <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Пароль' />
+                        <p onClick={() => setModal(true)} className='blue_text'>Сменить пароль</p>
+                    </div>
+                    <div className="red_text">
+                        Выйти с аккаунта
+                    </div>
+                </div>}
                 {ticket && <div className="ticket_profile">
                     <div onClick={() => navigate("/detail-ticket/1")} className="bilet">
                         <div className="flex_box">

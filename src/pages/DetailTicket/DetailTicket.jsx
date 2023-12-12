@@ -3,11 +3,18 @@ import "./DetailTicket.css"
 import air from "../../img/air.svg"
 import line1 from "../../img/Line 1.svg"
 import line2 from "../../img/Line 2.svg"
+import back from "../../img/back.svg"
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const DetailTicket = () => {
+    const navigate = useNavigate()
+
     return (
         <div className='detail_ticket'>
             <div className="container">
+                <div className="wrap">
+                    <img className='back' onClick={() => navigate(-1)} src={back} alt="" />
+                </div>
                 <div className="wrapper">
                     <div className="block">
                         <span className='title'>Детали билета</span>

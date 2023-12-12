@@ -184,7 +184,16 @@ const Ticket = () => {
         </div>
       </div>
       {modal &&
-        <Modal img={refresh} title={"Результаты могли устареть"} text={"Цены на билеты обновляются около 10 раз в день. Обновите поиск, чтобы увидеть точные даты"} btn={"Обновить"} setModal={setModal} />
+        <Modal setModal={setModal}>
+          <img src={refresh} alt="" />
+          <p className="modal_title">
+            Результаты могли устареть
+          </p>
+          <p className='modal_text'>
+            Цены на билеты обновляются около 10 раз в день. Обновите поиск, чтобы увидеть точные даты
+          </p>
+          <button className='modal_btn'>Обновить</button>
+        </Modal>
       }
     </div>
   )

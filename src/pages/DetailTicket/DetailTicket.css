@@ -4,11 +4,19 @@
     padding-bottom: 250px;
 }
 
+.detail_ticket .back {
+    cursor: pointer;
+}
+
 .detail_ticket .nav {
     margin-top: 10px;
     display: grid;
     grid-template-columns: 3fr 1fr;
     column-gap: 100px;
+}
+
+.detail_ticket .wrapper {
+    margin-top: 20px;
 }
 
 .detail_ticket .contant_text {
