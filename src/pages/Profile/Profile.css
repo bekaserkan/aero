@@ -202,11 +202,11 @@
     background: var(--2, #E8E8E8);
 }
 
-.profile .form_password{
+.profile .form_password {
     margin-top: 30px;
     width: 100%;
 }
 
-.profile .modal_title{
+.profile .modal_title.a {
     margin: 0;
 }

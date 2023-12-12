@@ -7,8 +7,6 @@ const Header = ({ local }) => {
     const [booking, setBooking] = useState(false)
     const [info, setInfo] = useState(false)
     const [about, setAbout] = useState(false)
-    
-    console.log(local);
 
     function close() {
         setBooking(false)

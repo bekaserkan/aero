@@ -24,7 +24,7 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const token = localStorage.getItem("token ")
+    const token = localStorage.getItem("token")
     console.log(token);
     setLocal(token)
   }, [location])

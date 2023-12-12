@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Profile.css"
 import empty from "../../img/empty_bought_tickets.png"
 import arrow from "../../img/arrow_direct.svg"
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import profile from "../../img/profile.svg"
 import change from "../../img/change.svg"
 import Modal from '../../components/UI/Modal/Modal'
@@ -30,13 +30,14 @@ const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal })
     });
     const [loading, setLoading] = useState(false);
     const [local, setLocal] = useState();
+    const location = useLocation()
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         if (token) {
             setLocal(token);
         }
-    }, []);
+    }, [location]);
 
     const headers = {
         Authorization: `Token ${local}`,
@@ -102,7 +103,7 @@ const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal })
                 <p className='modal_text'>
                     Теперь вы можете легко и просто найти и покупать билеты в Airtickets
                 </p>
-                <button className='modal_btn'>Понятно</button>
+                <button onClick={() => setLoginModal(false)} className='modal_btn'>Понятно</button>
             </Modal>}
             {registerModal && <Modal setModal={setRegisterModal} >
                 <img src={check} alt="" />
@@ -112,10 +113,10 @@ const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal })
                 <p className='modal_text'>
                     Теперь вы можете легко и просто найти и покупать билеты в Airtickets
                 </p>
-                <button className='modal_btn'>Понятно</button>
+                <button onClick={() => setRegisterModal(false)} className='modal_btn'>Понятно</button>
             </Modal>}
             {modal && <Modal setModal={setModal}>
-                <p className='modal_title'>Сменить пароль</p>
+                <p className='modal_title a'>Сменить пароль</p>
                 <p className='modal_text'>Придумайте новый пароль и введите его ещё раз для потверждения</p>
                 <form onSubmit={ChangeFunc} className="form_password">
                     <div className="input_box">

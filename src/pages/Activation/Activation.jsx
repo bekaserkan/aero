@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Activation.css";
-import Header from "../../components/Header/Header";
 import { url } from "../../Api";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
@@ -42,11 +41,12 @@ const Activation = ({
           if (verify !== "verify") {
             alert(response.data.message, "success");
           }
-          navigate("/dashboard");
           if (verify === "verify") {
             setLoginModal(true)
+            navigate("/dashboard");
           } else {
             etRegisterModal(true)
+            navigate("/dashboard");
           }
         } else {
           alert(response.data.message, "error");
