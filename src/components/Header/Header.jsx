@@ -2,11 +2,18 @@ import React, { useEffect, useState } from 'react'
 import "./Header.css"
 import { NavLink } from 'react-router-dom'
 import profile from "../../img/profile.svg"
+import { MdClose } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io";
 
 const Header = ({ local }) => {
     const [booking, setBooking] = useState(false)
     const [info, setInfo] = useState(false)
     const [about, setAbout] = useState(false)
+    const [menu, setMenu] = useState(false)
+    const [bookingMenu, setBookingMenu] = useState(false)
+    const [infoMenu, setInfoMenu] = useState(false)
+    const [aboutMenu, setAboutMenu] = useState(false)
 
     function close() {
         setBooking(false)
@@ -22,7 +29,7 @@ const Header = ({ local }) => {
         <>
             <div className="header"></div>
             <div className='header_fixet'>
-                <div className="container">
+                <div className="container one">
                     <div className="head">
                         {booking &&
                             <div onClick={close} className="fixet"></div>
@@ -160,7 +167,66 @@ const Header = ({ local }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+                <div className="container two">
+                    <div onClick={() => setMenu(true)} className="burger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <h1 className='title_burger'>Airtickets</h1>
+                    <NavLink className="login" to="/login">
+                        Войти
+                    </NavLink>
+                </div>
+                {menu &&
+                    <div className="menu_modal">
+                        <div onClick={() => setMenu(false)} className="menu_not"></div>
+                        <div className="menu_container">
+                            <MdClose onClick={() => setMenu(false)} className='close' />
+                            <p onClick={() => setBookingMenu(!bookingMenu) || setAboutMenu(false) || setInfoMenu(false)} className={bookingMenu ? "menu_link active" : 'menu_link'}>
+                                Бронирование и управление {bookingMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
+                            </p>
+                            {bookingMenu && <div className="menu_group">
+                                <p className='menu_big'>Планирование</p>
+                                <p className='menu_small'>Багаж</p>
+                                <p className='menu_small'>Чартерные перевозки</p>
+                                <p className='menu_small'>Расписание рейсов</p>
+                                <p className='menu_small'>Наши направления</p>
+                                <p className='menu_big'>Управление бронированием</p>
+                                <p className='menu_small'>Онлаин регистрация</p>
+                                <p className='menu_small'>Купить багаж</p>
+                                <p className='menu_small'>Управление бронированием</p>
+                            </div>}
+                            <p onClick={() => setInfoMenu(!infoMenu) || setBookingMenu(false) || setAboutMenu(false)} className={infoMenu ? "menu_link active" : 'menu_link'}>
+                                Информация {infoMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
+                            </p>
+                            {infoMenu && <div className="menu_group">
+                                <p className='menu_big'>О поездке</p>
+                                <p className='menu_small'>Багаж</p>
+                                <p className='menu_small'>Нормы бесплатного провоза багажа</p>
+                                <p className='menu_small'>Путешествие с детьми и младенцами</p>
+                                <p className='menu_small'>Перевозка несопровождаемых детей</p>
+                                <p className='menu_small'>Перевозка беременных женщин</p>
+                                <p className='menu_small'>Перевозка питомцев</p>
+                                <p className='menu_big'>О бронировании</p>
+                                <p className='menu_small'>Как забронировать билет</p>
+                                <p className='menu_small'>Изменение бронирования</p>
+                                <p className='menu_small'>Возврат и отмена</p>
+                            </div>}
+                            <p onClick={() => setAboutMenu(!aboutMenu) || setInfoMenu(false) || setBookingMenu(false)} className={aboutMenu ? "menu_link active" : 'menu_link'}>
+                                О компании {aboutMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
+                            </p>
+                            {aboutMenu && <div className="menu_group">
+                                <p className='menu_big'>О компании</p>
+                                <p className='menu_small'>О нас</p>
+                                <p className='menu_small'>Наши партнеры</p>
+                                <p className='menu_small'>Новости</p>
+                            </div>}
+                            <p className='menu_link'>Контакты</p>
+                        </div>
+                    </div>
+                }
+            </div >
         </>
     )
 }
