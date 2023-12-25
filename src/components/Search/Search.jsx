@@ -22,6 +22,11 @@ const Search = () => {
 
     return (
         <div className='search'>
+            <div className="menu_search">
+                <h2 className='search_title'>
+                    Бронирование авиабилетов - Airtickets
+                </h2>
+            </div>
             <div className="slider_slick">
                 <Slider {...settings}>
                     <div className="slider">
@@ -37,8 +42,10 @@ const Search = () => {
                     <div className='search_div' >
                         <input className='border1' type="text" placeholder='Откуда?' />
                         <input type="text" placeholder='Куда?' />
-                        <input type="date" />
-                        <input type="date" />
+                        <div className='search_div_in'>
+                            <input type="date" />
+                            <input type="date" />
+                        </div>
                         <input className='border2' type="text" />
                     </div>
                     <button onClick={() => navigate("/ticket")} >Найти</button>

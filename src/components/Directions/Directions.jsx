@@ -9,7 +9,7 @@ const Directions = () => {
             <div className="container">
                 <div className="current_head">
                     <h2>Популярные направления</h2>
-                    <NavLink to="" className="direct" >Все направления <img src={arrow} alt="" /></NavLink>
+                    <NavLink to="" className="direct" >Все <span>направления</span> <img src={arrow} alt="" /></NavLink>
                 </div>
                 <div className="directions_contant">
                     <div className='directions_box'>

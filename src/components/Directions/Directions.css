@@ -6,6 +6,7 @@
 .directions .current_head {
     width: 100%;
     display: flex;
+    align-items: center;
     position: relative;
 }
 
@@ -58,4 +59,40 @@
     padding: 10px 20px;
     background: var(--white);
     border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .directions .directions_contant {
+        display: flex;
+        overflow-y: hidden;
+    }
+
+    .directions .directions_box {
+        width: 200px;
+        padding: 14px 83px 156px 14px;
+        height: 200px;
+    }
+
+    .directions .city {
+        margin: 0;
+        width: 90px;
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--black);
+        padding: 10px;
+    }
+
+    .directions .direct span {
+        display: none;
+    }
+
+    .directions .direct {
+        top: -5px;
+        font-size: 14px;
+    }
+
+    .directions .direct {
+        width: 30px;
+        height: 30px;
+    }
 }

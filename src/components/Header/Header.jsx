@@ -173,7 +173,7 @@ const Header = ({ local }) => {
                         <div></div>
                         <div></div>
                     </div>
-                    <h1 className='title_burger'>Airtickets</h1>
+                    <NavLink to="/" className='title_burger'>Airtickets</NavLink>
                     <NavLink className="login" to="/login">
                         Войти
                     </NavLink>
@@ -188,39 +188,39 @@ const Header = ({ local }) => {
                             </p>
                             {bookingMenu && <div className="menu_group">
                                 <p className='menu_big'>Планирование</p>
-                                <p className='menu_small'>Багаж</p>
-                                <p className='menu_small'>Чартерные перевозки</p>
-                                <p className='menu_small'>Расписание рейсов</p>
-                                <p className='menu_small'>Наши направления</p>
+                                <NavLink className='menu_small'>Багаж</NavLink>
+                                <NavLink className='menu_small'>Чартерные перевозки</NavLink>
+                                <NavLink className='menu_small'>Расписание рейсов</NavLink>
+                                <NavLink className='menu_small'>Наши направления</NavLink>
                                 <p className='menu_big'>Управление бронированием</p>
-                                <p className='menu_small'>Онлаин регистрация</p>
-                                <p className='menu_small'>Купить багаж</p>
-                                <p className='menu_small'>Управление бронированием</p>
+                                <NavLink className='menu_small'>Онлаин регистрация</NavLink>
+                                <NavLink className='menu_small'>Купить багаж</NavLink>
+                                <NavLink className='menu_small'>Управление бронированием</NavLink>
                             </div>}
                             <p onClick={() => setInfoMenu(!infoMenu) || setBookingMenu(false) || setAboutMenu(false)} className={infoMenu ? "menu_link active" : 'menu_link'}>
                                 Информация {infoMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
                             </p>
                             {infoMenu && <div className="menu_group">
                                 <p className='menu_big'>О поездке</p>
-                                <p className='menu_small'>Багаж</p>
-                                <p className='menu_small'>Нормы бесплатного провоза багажа</p>
-                                <p className='menu_small'>Путешествие с детьми и младенцами</p>
-                                <p className='menu_small'>Перевозка несопровождаемых детей</p>
-                                <p className='menu_small'>Перевозка беременных женщин</p>
-                                <p className='menu_small'>Перевозка питомцев</p>
+                                <NavLink to="" className='menu_small'>Багаж</NavLink>
+                                <NavLink to="" className='menu_small'>Нормы бесплатного провоза багажа</NavLink>
+                                <NavLink to="" className='menu_small'>Путешествие с детьми и младенцами</NavLink>
+                                <NavLink to="" className='menu_small'>Перевозка несопровождаемых детей</NavLink>
+                                <NavLink to="" className='menu_small'>Перевозка беременных женщин</NavLink>
+                                <NavLink to="" className='menu_small'>Перевозка питомцев</NavLink>
                                 <p className='menu_big'>О бронировании</p>
-                                <p className='menu_small'>Как забронировать билет</p>
-                                <p className='menu_small'>Изменение бронирования</p>
-                                <p className='menu_small'>Возврат и отмена</p>
+                                <NavLink to="" className='menu_small'>Как забронировать билет</NavLink>
+                                <NavLink to="" className='menu_small'>Изменение бронирования</NavLink>
+                                <NavLink to="" className='menu_small'>Возврат и отмена</NavLink>
                             </div>}
                             <p onClick={() => setAboutMenu(!aboutMenu) || setInfoMenu(false) || setBookingMenu(false)} className={aboutMenu ? "menu_link active" : 'menu_link'}>
                                 О компании {aboutMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
                             </p>
                             {aboutMenu && <div className="menu_group">
                                 <p className='menu_big'>О компании</p>
-                                <p className='menu_small'>О нас</p>
-                                <p className='menu_small'>Наши партнеры</p>
-                                <p className='menu_small'>Новости</p>
+                                <NavLink to="" className='menu_small'>О нас</NavLink>
+                                <NavLink to="" className='menu_small'>Наши партнеры</NavLink>
+                                <NavLink to="" className='menu_small'>Новости</NavLink>
                             </div>}
                             <p className='menu_link'>Контакты</p>
                         </div>
