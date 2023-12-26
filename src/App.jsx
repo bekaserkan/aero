@@ -41,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <div style={{ width: "90%", height: "60vh", background: "var(--blue)", display: "flex", justifyContent: "center", alignItems: "center", margin: "0 auto" }} >
-        <h1 style={{ color: "#fff", fontSize: 30 }} >Salam Umka <FaRegHandPaper size={30} /> </h1>
+        <h1 style={{ color: "#fff", fontSize: 30 }} >Salam beka <FaRegHandPaper size={30} /> </h1>
       </div>
       <Header local={local} />
       <Routes>
