@@ -10,6 +10,7 @@ const WePartner = () => {
 
     const settings = {
         dots: false,
+        arrows: false,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,
@@ -23,7 +24,7 @@ const WePartner = () => {
         <div className='we_partner'>
             <div className="container">
                 <h2>Наши партнёры</h2>
-                <Slider {...settings}>
+                <Slider {...settings} className='slide_block'>
                     <div>
                         <div className='slide_image'>
                             <div className="img">
@@ -65,6 +66,48 @@ const WePartner = () => {
                         </div>
                     </div>
                 </Slider>
+                <div className="block_block">
+                    <div>
+                        <div className='slide_image'>
+                            <div className="img">
+                                <img src={icon_componi1} alt="" />
+                            </div>
+                            <span className='title'>Международный аэропорт Манас</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide_image'>
+                            <div className="img">
+                                <img src={icon_componi2} alt="" />
+                            </div>
+                            <span className='title'>Кыргызский авиационный институт</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide_image'>
+                            <div className="img">
+                                <img src={icon_componi3} alt="" />
+                            </div>
+                            <span className='title'>ОсОО «Газпром Кыргызстан»</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide_image'>
+                            <div className="img">
+                                <img src={icon_componi4} alt="" />
+                            </div>
+                            <span className='title'>ЗАО «Манас Менеджмент»</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div className='slide_image'>
+                            <div className="img">
+                                <img src={icon_componi1} alt="" />
+                            </div>
+                            <span className='title'>Международный аэропорт Манас</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

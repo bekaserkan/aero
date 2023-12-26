@@ -9,3 +9,15 @@
     font-weight: 400;
     color: var(--black);
 }
+
+@media (max-width: 600px) {
+    .about h2 {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--black);
+    }
+
+    .about {
+        padding-bottom: 150px;
+    }
+}

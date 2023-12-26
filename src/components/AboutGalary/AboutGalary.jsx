@@ -23,7 +23,7 @@ const AboutGalary = () => {
                     </div>
                     <div className="contant_img_block_two">
                         <img src={photo5} alt="" />
-                        <img src={photo6} alt="" />
+                        <img className='height' src={photo6} alt="" />
                     </div>
                 </div>
             </div>
