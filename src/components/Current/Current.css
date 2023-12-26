@@ -54,6 +54,47 @@
 
 .current .flex {
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 40px;
+}
+
+@media (max-width: 600px) {
+    .current {
+        margin-top: 50px;
+    }
+
+    .current .contant {
+        margin-top: 16px;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .current .contant_block {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .current .contant .title {
+        font-size: 16px;
+    }
+
+    .current .contant_block.f {
+        height: 300px;
+    }
+
+    .current .contant_box {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .current .contant_block {
+        height: 100%;
+    }
+
+    .current .contant_block img {
+        width: 30px;
+        height: 30px;
+    }
 }

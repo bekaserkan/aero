@@ -21,3 +21,9 @@
     font-size: 24px;
     color: var(--gray);
 }
+
+@media (max-width: 600px) {
+    .icons_componi {
+        margin-top: 50px;
+    }
+}

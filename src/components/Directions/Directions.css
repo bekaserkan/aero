@@ -62,6 +62,10 @@
 }
 
 @media (max-width: 600px) {
+    .directions {
+        margin-top: 50px;
+    }
+
     .directions .directions_contant {
         display: flex;
         overflow-y: hidden;

@@ -24,7 +24,7 @@ const InfoPage = () => {
                         <p>Прямое авиасообщение между Бишкеком и Сеулом планируется запустить 11 июня текущего года. Об этом стало известно в ходе встречи посла Кыргызской Республики в Республике Корея Аиды Исмаиловой с президентом авиакомпании T’way Енг Хонг Геном. Узнать больше: https://vesti.kg/obshchestvo/item/111363-v-iyune-nachnut-letat-pryamye-rejsy-bishkek-seul.html - В июне начнут летать прямые рейсы Бишкек — Сеул - Вести.kg - Новости Кыргызстана</p>
                     </div>
                     <div className="drop_down">
-                        <div onClick={() => setTrip(!trip)} className="drop_trip">
+                        <div onClick={() => setTrip(!trip) || setBron(false)} className="drop_trip">
                             О поездке
                             {trip ?
                                 <img src={arrow_up} alt="" />
@@ -38,7 +38,7 @@ const InfoPage = () => {
                             <NavLink to="/info-page/dog" className="drop_contant">Перевозка питомцев <img src={arrow_whihe} alt="" />  </NavLink>
                             <NavLink to="" className="drop_contant">Перевозка питомцев <img src={arrow_whihe} alt="" />  </NavLink>
                         </div>}
-                        <div onClick={() => setBron(!bron)} className="drop_trip">
+                        <div onClick={() => setBron(!bron) || setTrip(false)} className="drop_trip">
                             О бронировании
                             {bron ?
                                 <img src={arrow_up} alt="" />

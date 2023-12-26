@@ -10,6 +10,7 @@ const IconsComponi = () => {
 
     const settings = {
         dots: false,
+        arrows: false,
         infinite: true,
         slidesToShow: 4,
         slidesToScroll: 1,

@@ -361,9 +361,9 @@
 }
 
 @media (max-width: 600px) {
-    .header {
+    /* .header {
         height: 0;
-    }
+    } */
 
     .header_fixet .container.one {
         display: none;

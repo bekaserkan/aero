@@ -20,7 +20,7 @@
 }
 
 .info_page .drop {
-    transition: drop .3s ease;
+    animation: drop .3s ease;
 }
 
 @keyframes drop {
@@ -77,4 +77,48 @@
     font-size: 20px;
     font-weight: 300;
     color: #575757;
+}
+
+@media (max-width: 600px) {
+    .info_page {
+        padding-bottom: 150px;
+    }
+
+    .info_page .image {
+        margin-top: 24px;
+        height: 160px;
+    }
+
+    .info_page .contant {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .info_page h2 {
+        font-size: 16px;
+    }
+
+    .info_page p {
+        margin-top: 12px;
+        font-size: 14px;
+    }
+
+    .info_page .drop_trip {
+        padding: 16px;
+        border-radius: 14px;
+        font-size: 16px;
+    }
+
+    .info_page .drop_contant {
+        padding: 16px;
+        border-radius: 14px;
+        font-size: 14px;
+    }
+
+    .info_page .drop_contant img {
+        width: 30px;
+        height: 30px;
+    }
 }
