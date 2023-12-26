@@ -67,14 +67,17 @@
     }
 
     .directions .directions_contant {
-        display: flex;
+        margin-top: 16px;
+        display: grid;
         overflow-y: hidden;
+        gap: 10px;
     }
 
     .directions .directions_box {
         width: 200px;
-        padding: 14px 83px 156px 14px;
         height: 200px;
+        padding: 14px;
+        box-sizing: border-box;
     }
 
     .directions .city {
@@ -96,6 +99,11 @@
     }
 
     .directions .direct {
+        width: 30px;
+        height: 30px;
+    }
+
+    .directions .current_head img {
         width: 30px;
         height: 30px;
     }

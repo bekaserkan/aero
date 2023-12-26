@@ -80,6 +80,8 @@
     }
 
     .current .contant_block.f {
+        padding: 16px;
+        border-radius: 20px;
         height: 300px;
     }
 
@@ -87,6 +89,8 @@
         display: flex;
         flex-direction: column;
         gap: 14px;
+        border-radius: 20px;
+        padding: 16px;
     }
 
     .current .contant_block {

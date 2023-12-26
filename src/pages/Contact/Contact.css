@@ -8,13 +8,12 @@
 .contact .contact_block {
     width: 100%;
     min-height: 0;
-
 }
 
 .contact .contact_head {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    overflow-y: hidden;
 }
 
 .contact .contact_head .btn {
@@ -102,4 +101,37 @@
     height: 100%;
     border: none;
     border-radius: 30px;
+}
+
+@media (max-width: 600px) {
+    .contact {
+        padding-bottom: 150px;
+    }
+
+    .contact .contact_head .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .contact .h1 {
+        display: none;
+    }
+
+    .contact .contact_box .h3 {
+        font-size: 15px;
+    }
+
+    .contact .contact_box p,
+    .contact .contact_box a {
+        font-size: 14px;
+    }
+
+    .contact .map {
+        margin-top: 25px;
+        height: 200px;
+    }
+
+    .contact .contant {
+        margin-top: 40px;
+    }
 }

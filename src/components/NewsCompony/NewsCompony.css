@@ -60,12 +60,15 @@
     }
 
     .news_compony .contant {
+        margin-top: 16px;
         display: grid;
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .news_compony .news_compony_block {
         margin: 0;
+        padding: 16px;
         height: 100%;
     }
 

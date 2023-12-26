@@ -128,7 +128,8 @@
     }
 
     .search .slider_slick {
-        padding-bottom: 60px;
+        padding-top: 50px;
+        padding-bottom: 0;
     }
 
     .search .slider {
@@ -143,5 +144,9 @@
 
     .search .search_div_in {
         gap: 10px;
+    }
+
+    .search .slider img {
+        border-radius: 16px;
     }
 }
