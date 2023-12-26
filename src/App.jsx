@@ -16,6 +16,7 @@ import Ticket from './pages/Ticket/Ticket';
 import Booking from './pages/Booking/Booking';
 import Profile from './pages/Profile/Profile';
 import DetailTicket from './pages/DetailTicket/DetailTicket';
+import { FaRegHandPaper } from "react-icons/fa";
 
 function App() {
   const [loginModal, setLoginModal] = useState(false)
@@ -39,6 +40,9 @@ function App() {
 
   return (
     <div className="App">
+      <div style={{ width: "90%", height: "60vh", background: "var(--blue)", display: "flex", justifyContent: "center", alignItems: "center", margin: "0 auto" }} >
+        <h1 style={{ color: "#fff", fontSize: 30 }} >Salam Umka <FaRegHandPaper size={30} /> </h1>
+      </div>
       <Header local={local} />
       <Routes>
         <Route path='/' element={<Main />} />
