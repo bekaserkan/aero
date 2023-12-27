@@ -4,6 +4,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { url } from '../../Api';
 import Loading from '../../components/UI/Loading/Loading';
+import navigateImage from "../../img/navigate.svg"
 
 const Login = ({ setLoginModal }) => {
     const [visible, setVisible] = useState(false);
@@ -49,6 +50,9 @@ const Login = ({ setLoginModal }) => {
         <div className="auth">
             <div className='login'>
                 <div className="container">
+                    <div className="navigate">
+                        <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+                    </div>
                     <div className="login_form">
                         <div className="login_form_head">
                             <span className='h1'>

@@ -174,9 +174,13 @@ const Header = ({ local }) => {
                         <div></div>
                     </div>
                     <NavLink to="/" className='title_burger'>Airtickets</NavLink>
-                    <NavLink className="login" to="/login">
-                        Войти
-                    </NavLink>
+                    {local ?
+                        <NavLink to="/dashboard" className="pagereg" onClick={() => setInfo(false) || setBooking(false) || setAbout(false)}> <img className='profile_image' src={profile} alt="" /></NavLink>
+                        :
+                        <NavLink className="login" to="/login">
+                            Войти
+                        </NavLink>
+                    }
                 </div>
                 {menu &&
                     <div className="menu_modal">
@@ -184,7 +188,7 @@ const Header = ({ local }) => {
                         <div className="menu_container">
                             <MdClose onClick={() => setMenu(false)} className='close' />
                             <p onClick={() => setBookingMenu(!bookingMenu) || setAboutMenu(false) || setInfoMenu(false)} className={bookingMenu ? "menu_link active" : 'menu_link'}>
-                                Бронирование и управление {bookingMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
+                                Бронирование и управление {bookingMenu ? <IoIosArrowUp className='menu_open_icon' /> : <IoIosArrowDown className='menu_close_icon' />}
                             </p>
                             {bookingMenu && <div className="menu_group">
                                 <p className='menu_big'>Планирование</p>
@@ -198,7 +202,7 @@ const Header = ({ local }) => {
                                 <NavLink onClick={() => setMenu(false)} className='menu_small'>Управление бронированием</NavLink>
                             </div>}
                             <p onClick={() => setInfoMenu(!infoMenu) || setBookingMenu(false) || setAboutMenu(false)} className={infoMenu ? "menu_link active" : 'menu_link'}>
-                                Информация {infoMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
+                                Информация {infoMenu ? <IoIosArrowUp className='menu_open_icon' /> : <IoIosArrowDown className='menu_close_icon' />}
                             </p>
                             {infoMenu && <div className="menu_group">
                                 <p className='menu_big'>О поездке</p>
@@ -214,7 +218,7 @@ const Header = ({ local }) => {
                                 <NavLink onClick={() => setMenu(false)} to="" className='menu_small'>Возврат и отмена</NavLink>
                             </div>}
                             <p onClick={() => setAboutMenu(!aboutMenu) || setInfoMenu(false) || setBookingMenu(false)} className={aboutMenu ? "menu_link active" : 'menu_link'}>
-                                О компании {aboutMenu ? <IoIosArrowDown className='menu_close_icon' /> : <IoIosArrowUp className='menu_open_icon' />}
+                                О компании {aboutMenu ? <IoIosArrowUp className='menu_open_icon' /> : <IoIosArrowDown className='menu_close_icon' />}
                             </p>
                             {aboutMenu && <div className="menu_group">
                                 <p className='menu_big'>О компании</p>

@@ -5,6 +5,7 @@ import axios from "axios";
 import Loading from "../../components/UI/Loading/Loading";
 import { url } from "../../Api";
 import { NavLink, useNavigate } from "react-router-dom";
+import navigateImage from "../../img/navigate.svg"
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -57,12 +58,13 @@ const Register = () => {
     }
   };
 
-  console.log(inputData.email);
-
   return (
     <div className="auth">
       <div className='register'>
         <div className="container">
+          <div className="navigate">
+            <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+          </div>
           <div className="login_form">
             <div className="login_form_head">
               <span className='h1'>

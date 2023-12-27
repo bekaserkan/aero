@@ -13,10 +13,11 @@
 .profile .profile_head {
     margin-top: 40px;
     display: flex;
-    gap: 40px;
+    /* gap: 40px; */
 }
 
 .profile .profile_page {
+    padding: 0 15px;
     font-size: 18px;
     font-weight: 400;
     color: var(--black);
@@ -43,7 +44,7 @@
 .profile .not_data .not_data_title {
     margin-top: 16px;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--black);
 }
 
@@ -209,4 +210,138 @@
 
 .profile .modal_title.a {
     margin: 0;
+}
+
+.profile .block {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .profile {
+        padding-bottom: 150px;
+    }
+
+    .profile .title {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .profile .profile_head {
+        margin-top: 10px;
+    }
+
+    .profile .profile_page {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .profile .not_data {
+        margin: 130px 0;
+    }
+
+    .profile .not_data img {
+        width: 80px;
+    }
+
+    .profile .not_data .not_data_title {
+        font-size: 16px;
+    }
+
+    .profile .not_data .not_data_text {
+        font-size: 14px;
+    }
+
+    .profile .ticket_profile {
+        gap: 16px;
+    }
+
+    .profile .bilet {
+        width: 100%;
+        padding: 16px;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .profile .border_block {
+        border-top: 1px solid var(--3, #DBDBDB);
+        padding-top: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .profile .border_block img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .profile .flex_title {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile .flex_code {
+        font-size: 12px;
+    }
+
+    .profile .date {
+        font-size: 16px;
+    }
+
+    .profile .bilet p {
+        font-size: 12px;
+    }
+
+    .profile .data {
+        margin-top: 20px;
+        width: 100%;
+        padding: 16px;
+        border-radius: 24px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .profile .blue_text,
+    .profile .preview {
+        display: none;
+    }
+
+    .profile .block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .profile .blue_text.password {
+        display: block;
+        margin: 0;
+    }
+
+    .profile .block .preview {
+        display: block;
+    }
+
+    .profile .red_text,
+    .profile .block .blue_text {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        color: var(--blue);
+        margin-left: auto;
+        cursor: pointer;
+        padding: 10px 20px;
+    }
+
+    .profile .red_text {
+        margin-top: 20px;
+    }
+
+    .profile .none {
+        display: none;
+    }
 }

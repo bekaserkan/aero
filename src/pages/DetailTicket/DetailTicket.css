@@ -213,3 +213,135 @@
 .detail_ticket .status.red {
     color: #F22B37;
 }
+
+.detail_ticket .summa_block {
+    display: none;
+}
+
+.detail_ticket .status.status_block {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .detail_ticket {
+        padding-top: 16px;
+        padding-bottom: 150px;
+    }
+
+    .detail_ticket .nav {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .detail_ticket .wrapper {
+        margin-top: 15px;
+    }
+
+    .detail_ticket .contant_text {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .detail_ticket .ticket_box {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .detail_ticket .box {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .detail_ticket .box_title {
+        font-size: 16px;
+    }
+
+    .detail_ticket .box_text {
+        font-size: 14px;
+    }
+
+    .detail_ticket .flex {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .detail_ticket .air_and_line .line {
+        width: 50px;
+    }
+
+    .detail_ticket .summa.none {
+        display: none;
+    }
+
+    .detail_ticket .summa_block {
+        padding: 0;
+        padding-top: 14px;
+        border: none;
+        border-top: 1px solid var(--3, #DBDBDB);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .detail_ticket .ticket_box .title {
+        font-size: 16px;
+    }
+
+    .detail_ticket .ticket_box p {
+        font-size: 10px;
+    }
+
+    .detail_ticket .ticket_box .price {
+        display: flex;
+        justify-content: flex-end;
+        font-size: 18px;
+    }
+
+    .detail_ticket .title {
+        font-size: 18px;
+    }
+
+    .detail_ticket .code {
+        margin-left: 10px;
+        font-size: 12px;
+    }
+
+    .detail_ticket .btns.none {
+        display: none;
+    }
+
+    .detail_ticket .status.none {
+        display: none;
+    }
+
+    .detail_ticket .filter {
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .detail_ticket .filter div {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--black);
+    }
+
+    .detail_ticket .circle {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    .detail_ticket .status.status_block {
+        display: flex;
+        align-items: center;
+    }
+}

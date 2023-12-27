@@ -340,7 +340,7 @@
     color: var(--blue);
 }
 
-.header_fixet .menu_link.active .menu_close_icon {
+.header_fixet .menu_link.active .menu_open_icon {
     color: var(--blue);
 }
 
@@ -382,5 +382,9 @@
         align-items: center;
         background: var(--blue);
         box-shadow: 0px 1px 10px 0px rgba(86, 86, 86, 0.15);
+    }
+
+    .header_fixet .pagereg {
+        margin-left: auto;
     }
 }

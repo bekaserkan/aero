@@ -4,10 +4,11 @@ import { url } from "../../Api";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Loading from "../../components/UI/Loading/Loading";
+import navigateImage from "../../img/navigate.svg"
 
 const Activation = ({
   setLoginModal,
-  etRegisterModal
+  setRegisterModal
 }) => {
   const { verify } = useParams()
   const navigate = useNavigate();
@@ -42,10 +43,10 @@ const Activation = ({
             alert(response.data.message, "success");
           }
           if (verify === "verify") {
-            setLoginModal(true)
+            setRegisterModal(true)
             navigate("/dashboard");
           } else {
-            etRegisterModal(true)
+            setLoginModal(true)
             navigate("/dashboard");
           }
         } else {
@@ -77,6 +78,9 @@ const Activation = ({
 
   return (
     <div className='activation'>
+      <div className="navigate">
+        <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+      </div>
       <div className="container">
         <div className="login_form">
           <div className="login_form_head">

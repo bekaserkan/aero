@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./DetailTicket.css"
 import air from "../../img/air.svg"
 import line1 from "../../img/Line 1.svg"
@@ -7,6 +7,7 @@ import back from "../../img/back.svg"
 import { Navigate, useNavigate } from 'react-router-dom'
 
 const DetailTicket = () => {
+    const [filter, setFilter] = useState(false)
     const navigate = useNavigate()
 
     return (
@@ -19,10 +20,18 @@ const DetailTicket = () => {
                     <div className="block">
                         <span className='title'>Детали билета</span>
                         <span className='code'>#P34633374586</span>
-                        <span className='status green'>В ожидании <div className="circle green"></div> </span>
+                        <span className='status green none'>В ожидании <div className="circle green"></div> </span>
+                        <div className="filter">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                     <p className='text'>Билет оплачен и выписан</p>
-                    <p className='contant_text'>Покупка 1-декабря, пт</p>
+                    <div className="flex">
+                        <p className='contant_text'>Покупка 1-декабря, пт</p>
+                        <span className='status status_block green'>В ожидании <div className="circle green"></div> </span>
+                    </div>
                     <div className="nav">
                         <div className="ticket_box">
                             <div className="air">
@@ -35,9 +44,9 @@ const DetailTicket = () => {
                                 <div className="air_contant">
                                     <p>4 ч 40 м</p>
                                     <div className="air_and_line">
-                                        <img src={line1} alt="" />
+                                        <img className='line' src={line1} alt="" />
                                         <img src={air} alt="" />
-                                        <img src={line2} alt="" />
+                                        <img className='line' src={line2} alt="" />
                                     </div>
                                     <p>Без пересадок</p>
                                 </div>
@@ -48,7 +57,7 @@ const DetailTicket = () => {
                                     <p>Москва</p>
                                 </div>
                             </div>
-                            <div className="summa">
+                            <div className="summa none">
                                 <div className="price">
                                     19 799 c
                                 </div>
@@ -56,8 +65,19 @@ const DetailTicket = () => {
                                 <p>4-декабря, пн</p>
                                 <p>Эконом/Лайт</p>
                             </div>
+                            <div className="summa_block">
+                                <div>
+                                    <p>4-декабря, пн</p>
+                                    <p>Эконом/Лайт</p>
+                                </div>
+                                <div>
+                                    <div className="price">
+                                        19 799 c
+                                    </div>
+                                    <p>За всех пассажиров</p></div>
+                            </div>
                         </div>
-                        <div className="btns">
+                        <div className="btns none">
                             <div className="btn">
                                 Маршрутная квитанция
                             </div>

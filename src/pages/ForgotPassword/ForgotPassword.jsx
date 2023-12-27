@@ -4,6 +4,7 @@ import Loading from "../../components/UI/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { url } from "../../Api";
 import axios from "axios";
+import navigateImage from "../../img/navigate.svg"
 
 const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
@@ -38,6 +39,9 @@ const ForgotPassword = () => {
   return (
     <div className='forgot_password'>
       <div className="container">
+        <div className="navigate">
+          <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+        </div>
         <div className="login_form">
           <div className="login_form_head">
             <span className='h1'>

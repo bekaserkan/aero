@@ -200,13 +200,20 @@ const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal })
                             <img src={profile} alt="" />
                             <img className='absolute' src={change} alt="" />
                         </div>
-                        <p onClick={() => setDisabled(!disabled)} className='blue_text'>Редактировать</p>
+                        <p onClick={() => setDisabled(!disabled)} className='blue_text'> {disabled ? "Редактировать" : "Сохранить"}</p>
+                        <div className="block">
+                            <div className="preview">
+                                <img src={profile} alt="" />
+                                <img className='absolute' src={change} alt="" />
+                            </div>
+                            <p onClick={() => setDisabled(!disabled)} className='blue_text'> {disabled ? "Редактировать" : "Сохранить"}</p>
+                        </div>
                         <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Имя' />
                         <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Фамилия' />
                         <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Номер' />
                         <input disabled={true} className='input_form disabled' type="text" placeholder='email' />
                         <input disabled={disabled} className={disabled ? 'input_form disabled' : "input_form"} type="text" placeholder='Пароль' />
-                        <p onClick={() => setModal(true)} className='blue_text'>Сменить пароль</p>
+                        <p onClick={() => setModal(true)} className='blue_text password'>Сменить пароль</p>
                     </div>
                     <div className="red_text">
                         Выйти с аккаунта
@@ -218,10 +225,16 @@ const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal })
                             <div className="flex">
                                 <span className="flex_title">
                                     Авиабилет
+                                    <span className="flex_code">
+                                        #P34633374586
+                                    </span>
                                 </span>
-                                <span className="flex_code">
+                                <span className="flex_code none">
                                     #P34633374586
                                 </span>
+                                <div>
+                                    <span className='status gray'>Архив <div className="circle gray"></div> </span>
+                                </div>
                             </div>
                             <div className="flex">
                                 <div>
@@ -237,81 +250,20 @@ const Profile = ({ loginModal, setLoginModal, registerModal, setRegisterModal })
                                     </div>
                                 </div>
                             </div>
-                            <div className="flex">
+                            <div className="flex none">
                                 <p>1 пассажир</p>
                                 <p>4-декабря, пн</p>
                             </div>
                         </div>
-                        <div className="border">
-                            <span className='status green'>В ожидании <div className="circle green"></div> </span>
-                            <img src={arrow} alt="" />
-                        </div>
-                    </div>
-                    <div className="bilet">
-                        <div className="flex_box">
-                            <div className="flex">
-                                <span className="flex_title">
-                                    Авиабилет
-                                </span>
-                                <span className="flex_code">
-                                    #P34633374586
-                                </span>
-                            </div>
-                            <div className="flex">
-                                <div>
-                                    <div className="date">
-                                        16:55
-                                        <p>Бишкек</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="date">
-                                        18:50
-                                        <p>Москва</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex">
-                                <p>1 пассажир</p>
-                                <p>4-декабря, пн</p>
-                            </div>
-                        </div>
-                        <div className="border">
+                        <div className="border none">
                             <span className='status gray'>Архив <div className="circle gray"></div> </span>
                             <img src={arrow} alt="" />
                         </div>
-                    </div>
-                    <div className="bilet">
-                        <div className="flex_box">
-                            <div className="flex">
-                                <span className="flex_title">
-                                    Авиабилет
-                                </span>
-                                <span className="flex_code">
-                                    #P34633374586
-                                </span>
-                            </div>
-                            <div className="flex">
-                                <div>
-                                    <div className="date">
-                                        16:55
-                                        <p>Бишкек</p>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className="date">
-                                        18:50
-                                        <p>Москва</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="flex">
+                        <div className="border_block">
+                            <div>
                                 <p>1 пассажир</p>
                                 <p>4-декабря, пн</p>
                             </div>
-                        </div>
-                        <div className="border">
-                            <span className='status red'>Отменен <div className="circle red"></div> </span>
                             <img src={arrow} alt="" />
                         </div>
                     </div>
