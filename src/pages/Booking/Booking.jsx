@@ -9,6 +9,7 @@ import icon1 from "../../img/icon-square.svg"
 import icon2 from "../../img/icon-square (1).svg"
 import icon3 from "../../img/icon-square (2).svg"
 import icon4 from "../../img/icon-square (3).svg"
+import navigateIcon from "../../img/back.svg"
 
 const Booking = () => {
     const [status, setStatus] = useState({
@@ -20,6 +21,12 @@ const Booking = () => {
     return (
         <div className='booking'>
             <div className="container">
+                <div className="navigate_block">
+                    <img src={navigateIcon} alt="" />
+                    <div>
+                        <p className="navigate_title">Бронирование</p>
+                    </div>
+                </div>
                 <div className="booking_body">
                     <div>
                         <div className="ticket_box">
@@ -36,9 +43,9 @@ const Booking = () => {
                                 <div className="air_contant">
                                     <p>4 ч 40 м</p>
                                     <div className="air_and_line">
-                                        <img src={line1} alt="" />
+                                        <img className='line' src={line1} alt="" />
                                         <img src={air} alt="" />
-                                        <img src={line2} alt="" />
+                                        <img className='line' src={line2} alt="" />
                                     </div>
                                     <p>Без пересадок</p>
                                 </div>
@@ -59,9 +66,9 @@ const Booking = () => {
                                 <div className="air_contant">
                                     <p>4 ч 40 м</p>
                                     <div className="air_and_line">
-                                        <img src={line1} alt="" />
+                                        <img className='line' src={line1} alt="" />
                                         <img src={air} alt="" />
-                                        <img src={line2} alt="" />
+                                        <img className='line' src={line2} alt="" />
                                     </div>
                                     <p>Без пересадок</p>
                                 </div>
@@ -121,8 +128,8 @@ const Booking = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="summa">
+                    <div className='fixet_block'>
+                        <div className="summa none">
                             <div className="title">
                                 Итоговая сумма:
                             </div>
@@ -130,6 +137,20 @@ const Booking = () => {
                                 19 799 c
                             </div>
                             <p>За всех пассажиров</p>
+                            <button>Выбрать</button>
+                        </div>
+                        <div className="summa_block">
+                            <div className='summa_block_flex'>
+                                <div className="title">
+                                    Итого:
+                                </div>
+                                <div>
+                                    <div className="price">
+                                        19 799 c
+                                    </div>
+                                    <p>За всех пассажиров</p>
+                                </div>
+                            </div>
                             <button>Выбрать</button>
                         </div>
                     </div>

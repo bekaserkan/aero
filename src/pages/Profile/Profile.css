@@ -325,7 +325,7 @@
         display: block;
     }
 
-    .profile .red_text,
+    /* .profile .red_text */
     .profile .block .blue_text {
         font-size: 14px;
         display: flex;
@@ -338,6 +338,7 @@
     }
 
     .profile .red_text {
+        padding: 0;
         margin-top: 20px;
     }
 

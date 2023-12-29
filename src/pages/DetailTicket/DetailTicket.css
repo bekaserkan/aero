@@ -224,7 +224,7 @@
 
 @media (max-width: 600px) {
     .detail_ticket {
-        padding-top: 16px;
+        padding-top: 20px;
         padding-bottom: 150px;
     }
 
@@ -234,7 +234,7 @@
     }
 
     .detail_ticket .wrapper {
-        margin-top: 15px;
+        margin-top: 20px;
     }
 
     .detail_ticket .contant_text {

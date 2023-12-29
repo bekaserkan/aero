@@ -188,3 +188,156 @@
     display: flex;
     justify-content: flex-start;
 }
+
+.booking .navigate_block {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .booking .navigate_block {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        margin-bottom: 20px;
+    }
+
+    .booking .navigate_title {
+        display: flex;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--black);
+    }
+
+    .booking {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 150px;
+    }
+
+    .booking .booking_body {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .booking .title {
+        font-size: 16px;
+    }
+
+    .booking .air {
+        margin-top: 10px;
+    }
+
+    .booking .ticket_box {
+        gap: 15px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .booking .air_and_line .line {
+        width: 50px;
+    }
+
+    .booking .summa.none {
+        display: none;
+    }
+
+    .booking .fixet_block {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background: var(--white);
+        padding: 16px 0;
+    }
+
+    .booking .summa_block {
+        width: 90%;
+        background: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .booking .summa_block .title {
+        font-size: 14px;
+    }
+
+    .booking .summa_block_flex {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .booking .booking_box {
+        margin-top: 16px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .booking p {
+        margin-top: 2px;
+        font-size: 12px;
+    }
+
+    .booking .ticket_box p {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--gray);
+    }
+
+    .booking .summa_block p {
+        margin: 0;
+        font-size: 10px;
+        font-weight: 300;
+        color: var(--gray);
+    }
+
+    .booking .price {
+        margin-top: 0;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 18px;
+    }
+
+    .booking input {
+        font-size: 14px;
+    }
+
+    .booking button {
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .booking .flex {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .booking .status {
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .booking .status img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .booking .status h3 {
+        font-size: 16px;
+    }
+
+    .booking .status p {
+        font-size: 14px;
+    }
+
+    .booking .status .price {
+        font-size: 16px;
+    }
+}

@@ -5,6 +5,7 @@ import line1 from "../../img/Line 1.svg"
 import line2 from "../../img/Line 2.svg"
 import back from "../../img/back.svg"
 import { Navigate, useNavigate } from 'react-router-dom'
+import ModalDown from '../../components/UI/ModalDown/ModalDown'
 
 const DetailTicket = () => {
     const [filter, setFilter] = useState(false)
@@ -12,6 +13,13 @@ const DetailTicket = () => {
 
     return (
         <div className='detail_ticket'>
+            {filter && <ModalDown setModal={setFilter} >
+                <div style={{marginTop: 30}}>
+                    <button className='modal_btn'>Маршрутная квитанция</button>
+                    <button className='modal_btn'>Электронный чек</button>
+                    <button className='modal_btn'>Оформить возврат</button>
+                </div>
+            </ModalDown>}
             <div className="container">
                 <div className="wrap">
                     <img className='back' onClick={() => navigate(-1)} src={back} alt="" />
@@ -21,7 +29,7 @@ const DetailTicket = () => {
                         <span className='title'>Детали билета</span>
                         <span className='code'>#P34633374586</span>
                         <span className='status green none'>В ожидании <div className="circle green"></div> </span>
-                        <div className="filter">
+                        <div onClick={() => setFilter(true)} className="filter">
                             <div></div>
                             <div></div>
                             <div></div>

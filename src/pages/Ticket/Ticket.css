@@ -135,3 +135,134 @@
     font-weight: 400;
     color: var(--blue);
 }
+
+.ticket .summs_block,
+.ticket .navigate_block {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .ticket {
+        padding-top: 20px;
+        padding-bottom: 150px;
+    }
+
+    .ticket .search_block {
+        display: none;
+    }
+
+    .ticket .navigate_block {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        align-items: center;
+    }
+
+    .ticket .navigate_block div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .ticket .navigate_title {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--black);
+    }
+
+    .ticket .navigate_text {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--gray);
+    }
+
+    .ticket .contant {
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ticket .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .ticket .air {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ticket .air.top {
+        border-top: 1px solid var(--grayW);
+        padding-top: 16px;
+    }
+
+    .ticket .ticket_box {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 16px;
+        border-radius: 20px;
+        background: var(--white);
+    }
+
+    .ticket .air_contant {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ticket .air_and_line {
+        display: flex;
+        align-items: center;
+    }
+
+    .ticket .air_and_line .line {
+        width: 50px;
+    }
+
+    .ticket .summa {
+        display: none;
+    }
+
+    .ticket .summs_block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ticket .summa button {
+        margin-top: 30px;
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+    }
+
+    .ticket .summa .btn {
+        height: 30px;
+    }
+
+    .ticket .ticket_box .title {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--black);
+    }
+
+    .ticket .ticket_box p {
+        text-align: center;
+        font-size: 12px;
+        font-weight: 300;
+        color: var(--gray);
+    }
+
+    .ticket .ticket_box .price {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--blue);
+    }
+}
