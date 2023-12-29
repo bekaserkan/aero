@@ -363,9 +363,9 @@
 }
 
 @media (max-width: 600px) {
-    /* .header {
-        height: 0;
-    } */
+    .header {
+        height: 70px;
+    }
 
     .header_fixet .container.one {
         display: none;
@@ -377,7 +377,7 @@
     }
 
     .header_fixet {
-        height: 80px;
+        height: 70px;
         display: flex;
         align-items: center;
         background: var(--blue);

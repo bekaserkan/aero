@@ -77,35 +77,37 @@ const Activation = ({
   };
 
   return (
-    <div className='activation'>
-      <div className="navigate">
-        <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
-      </div>
-      <div className="container">
-        <div className="login_form">
-          <div className="login_form_head">
-            <span className="h1">
-              Введите код
-            </span>
-          </div>
-          <div className="login_form_body">
-            <p>Мы отправили код на вашу электронную почту</p>
-            <form onSubmit={fetchData}>
-              <input
-                style={{ textAlign: "center" }}
-                className="input_form"
-                value={code}
-                type="number"
-                placeholder="Код потверждения"
-                onChange={(e) => setCode(e.target.value)}
-              />
-              <button style={{ marginTop: 20 }} disabled={loading} onSubmit={fetchData} className="button_form">
-                {loading ? <Loading color={"#fff"} /> : "Подвердить"}
-              </button>
-            </form>
-            <p onClick={Again} className="re_send">
-              Отправить снова
-            </p>
+    <div className="auth">
+      <div className='activation'>
+        <div className="navigate">
+          <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+        </div>
+        <div className="container">
+          <div className="login_form">
+            <div className="login_form_head">
+              <span className="h1">
+                Введите код
+              </span>
+            </div>
+            <div className="login_form_body">
+              <p>Мы отправили код на вашу электронную почту</p>
+              <form onSubmit={fetchData}>
+                <input
+                  style={{ textAlign: "center" }}
+                  className="input_form"
+                  value={code}
+                  type="number"
+                  placeholder="Код потверждения"
+                  onChange={(e) => setCode(e.target.value)}
+                />
+                <button style={{ marginTop: 20 }} disabled={loading} onSubmit={fetchData} className="button_form">
+                  {loading ? <Loading color={"#fff"} /> : "Подвердить"}
+                </button>
+              </form>
+              <p onClick={Again} className="re_send">
+                Отправить снова
+              </p>
+            </div>
           </div>
         </div>
       </div>
