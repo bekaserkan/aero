@@ -79,10 +79,10 @@ const Activation = ({
   return (
     <div className="auth">
       <div className='activation'>
-        <div className="navigate">
-          <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
-        </div>
         <div className="container">
+          <div className="navigate">
+            <img onClick={() => navigate(-1)} src={navigateImage} alt="" />
+          </div>
           <div className="login_form">
             <div className="login_form_head">
               <span className="h1">
